@@ -1,436 +1,984 @@
-[
-  {
-    "id": "hero0001",
-    "elType": "section",
-    "settings": {
-      "background_background": "classic",
-      "background_image": {
-        "url": "https://images.unsplash.com/photo-1601919051950-bb9f3ffb3fee?w=1800&auto=format&fit=crop&q=80",
-        "source": "external"
+{
+  "version": "0.4",
+  "title": "Domus Glamping Sardegna",
+  "type": "page",
+  "content": [
+    {
+      "id": "hero001",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "classic",
+        "background_image": {
+          "url": "https://images.unsplash.com/photo-1601919051950-bb9f3ffb3fee?w=1800&auto=format&fit=crop&q=80",
+          "source": "external"
+        },
+        "background_position": "center center",
+        "background_size": "cover",
+        "background_overlay_background": "classic",
+        "background_overlay_color": "rgba(15,20,15,0.58)",
+        "min_height": {
+          "unit": "vh",
+          "size": 100
+        },
+        "content_position": "middle",
+        "layout": "full_width",
+        "gap": "no",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": true
+        }
       },
-      "background_position": "center center",
-      "background_size": "cover",
-      "background_overlay_background": "classic",
-      "background_overlay_color": "rgba(15,20,15,0.58)",
-      "min_height": { "unit": "vh", "size": 100 },
-      "content_position": "middle",
-      "layout": "full_width",
-      "gap": "no",
-      "padding": { "unit": "px", "top": "0", "right": "0", "bottom": "0", "left": "0", "isLinked": true }
-    },
-    "elements": [{
-      "id": "hero0002",
-      "elType": "column",
-      "settings": { "column_width": { "unit": "%", "size": 100 } },
       "elements": [
         {
-          "id": "hero0003",
-          "elType": "widget",
-          "widgetType": "html",
+          "id": "hero002",
+          "elType": "column",
           "settings": {
-            "html": "<div style=\"text-align:center;\"><span style=\"display:inline-block; border:1px solid rgba(201,168,76,.45); padding:7px 18px; font-size:11px; letter-spacing:5px; text-transform:uppercase; color:#c9a84c; font-family:Inter,sans-serif;\">✦ Gallura, Sardegna · Slow Travel di Lusso</span></div>"
-          }
-        },
-        {
-          "id": "hero0004",
-          "elType": "widget",
-          "widgetType": "heading",
-          "settings": {
-            "title": "Svegliati tra <em>lavanda</em> e stelle di Gallura",
-            "header_size": "h1",
-            "align": "center",
-            "typography_font_family": "Cormorant Garamond",
-            "typography_font_size": { "unit": "px", "size": 80 },
-            "typography_font_size_tablet": { "unit": "px", "size": 54 },
-            "typography_font_size_mobile": { "unit": "px", "size": 38 },
-            "typography_font_weight": "300",
-            "typography_line_height": { "unit": "em", "size": 1.06 },
-            "title_color": "#fdfcfa",
-            "padding": { "unit": "px", "top": "20", "right": "60", "bottom": "0", "left": "60", "isLinked": false }
-          }
-        },
-        {
-          "id": "hero0005",
-          "elType": "widget",
-          "widgetType": "text-editor",
-          "settings": {
-            "editor": "<p style=\"text-align:center; font-size:17px; color:rgba(253,252,250,0.82); line-height:1.75; max-width:540px; margin:20px auto 0; font-family:Inter,sans-serif; font-weight:300;\">Domos geodésicos immersi in un bosco di lecci millenari e coltivazioni aromatiche selvatiche. Dove il tempo non esiste — solo il profumo dell'elicriso e il silenzio vero.</p>"
-          }
-        },
-        {
-          "id": "hero0006",
-          "elType": "widget",
-          "widgetType": "spacer",
-          "settings": { "space": { "unit": "px", "size": 36 } }
-        },
-        {
-          "id": "hero0007",
-          "elType": "widget",
-          "widgetType": "button",
-          "settings": {
-            "text": "Riserva il Tuo Domo →",
-            "link": { "url": "#lista-attesa" },
-            "align": "center",
-            "background_color": "#9b8ec4",
-            "button_text_color": "#fdfcfa",
-            "hover_background_color": "#7a6daa",
-            "typography_font_family": "Inter",
-            "typography_font_size": { "unit": "px", "size": 12 },
-            "typography_letter_spacing": { "unit": "px", "size": 2 },
-            "typography_text_transform": "uppercase",
-            "border_radius": { "unit": "px", "top": "0", "right": "0", "bottom": "0", "left": "0", "isLinked": true },
-            "text_padding": { "unit": "px", "top": "16", "right": "44", "bottom": "16", "left": "44", "isLinked": false }
-          }
-        }
-      ]
-    }]
-  },
-
-  {
-    "id": "sens0001",
-    "elType": "section",
-    "settings": {
-      "background_background": "classic",
-      "background_color": "#e8e4f0",
-      "padding": { "unit": "px", "top": "50", "right": "40", "bottom": "50", "left": "40", "isLinked": false },
-      "layout": "full_width",
-      "gap": "no"
-    },
-    "elements": [
-      {
-        "id": "sens0002",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 25 } },
-        "elements": [{ "id": "sens0003", "elType": "widget", "widgetType": "html", "settings": { "html": "<div style=\"padding:20px 24px; border-right:1px solid rgba(155,142,196,.25);\"><div style=\"font-size:28px; margin-bottom:10px;\">🌿</div><h4 style=\"font-family:Cormorant Garamond,serif; font-size:18px; font-weight:400; color:#1e2a1f; margin-bottom:6px;\">Profumo di Elicriso</h4><p style=\"font-size:13px; line-height:1.65; color:#7a7068; font-family:Inter,sans-serif;\">L'oro di Sardegna fiorisce intorno al tuo domo. Un'aromaterapia naturale senza uguale.</p></div>" } }]
-      },
-      {
-        "id": "sens0004",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 25 } },
-        "elements": [{ "id": "sens0005", "elType": "widget", "widgetType": "html", "settings": { "html": "<div style=\"padding:20px 24px; border-right:1px solid rgba(155,142,196,.25);\"><div style=\"font-size:28px; margin-bottom:10px;\">🌌</div><h4 style=\"font-family:Cormorant Garamond,serif; font-size:18px; font-weight:400; color:#1e2a1f; margin-bottom:6px;\">Cielo Stellato Privato</h4><p style=\"font-size:13px; line-height:1.65; color:#7a7068; font-family:Inter,sans-serif;\">Zero inquinamento luminoso. La cupola del tuo domo è il tuo telescopio personale.</p></div>" } }]
-      },
-      {
-        "id": "sens0006",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 25 } },
-        "elements": [{ "id": "sens0007", "elType": "widget", "widgetType": "html", "settings": { "html": "<div style=\"padding:20px 24px; border-right:1px solid rgba(155,142,196,.25);\"><div style=\"font-size:28px; margin-bottom:10px;\">🍃</div><h4 style=\"font-family:Cormorant Garamond,serif; font-size:18px; font-weight:400; color:#1e2a1f; margin-bottom:6px;\">Bosco di Lecci Millenari</h4><p style=\"font-size:13px; line-height:1.65; color:#7a7068; font-family:Inter,sans-serif;\">Sentieri silenziosi tra querce antichissime. Il suono della brezza e nient'altro.</p></div>" } }]
-      },
-      {
-        "id": "sens0008",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 25 } },
-        "elements": [{ "id": "sens0009", "elType": "widget", "widgetType": "html", "settings": { "html": "<div style=\"padding:20px 24px;\"><div style=\"font-size:28px; margin-bottom:10px;\">🧺</div><h4 style=\"font-family:Cormorant Garamond,serif; font-size:18px; font-weight:400; color:#1e2a1f; margin-bottom:6px;\">Colazione dai Produttori</h4><p style=\"font-size:13px; line-height:1.65; color:#7a7068; font-family:Inter,sans-serif;\">Miele di corbezzolo, formaggi di capra, pane carasau e marmellate artigianali.</p></div>" } }]
-      }
-    ]
-  },
-
-  {
-    "id": "intr0001",
-    "elType": "section",
-    "settings": {
-      "background_background": "classic",
-      "background_color": "#fdfcfa",
-      "padding": { "unit": "px", "top": "100", "right": "60", "bottom": "100", "left": "60", "isLinked": false },
-      "layout": "full_width",
-      "gap": "extended"
-    },
-    "elements": [
-      {
-        "id": "intr0002",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 50 } },
-        "elements": [{
-          "id": "intr0003",
-          "elType": "widget",
-          "widgetType": "image",
-          "settings": {
-            "image": { "url": "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=900&auto=format&fit=crop&q=80", "source": "external", "alt": "Domo geodésico en bosque de encinas" },
-            "image_size": "full",
-            "height": { "unit": "px", "size": 540 },
-            "object-fit": "cover"
-          }
-        }]
-      },
-      {
-        "id": "intr0004",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 50 } },
-        "elements": [
-          { "id": "intr0005", "elType": "widget", "widgetType": "text-editor", "settings": { "editor": "<p style=\"font-size:11px; letter-spacing:5px; text-transform:uppercase; color:#9b8ec4; font-family:Inter,sans-serif; margin-bottom:12px;\">🌱 La nostra storia</p>" } },
-          {
-            "id": "intr0006",
-            "elType": "widget",
-            "widgetType": "heading",
-            "settings": {
-              "title": "Un angolo di <em>Sardegna</em> rimasto intatto",
-              "header_size": "h2",
-              "typography_font_family": "Cormorant Garamond",
-              "typography_font_size": { "unit": "px", "size": 48 },
-              "typography_font_size_mobile": { "unit": "px", "size": 34 },
-              "typography_font_weight": "300",
-              "title_color": "#1e2a1f",
-              "padding": { "unit": "px", "top": "0", "right": "0", "bottom": "20", "left": "0", "isLinked": false }
+            "column_width": {
+              "unit": "%",
+              "size": 100
             }
           },
-          {
-            "id": "intr0007",
-            "elType": "widget",
-            "widgetType": "text-editor",
-            "settings": {
-              "editor": "<p style=\"font-size:16px; line-height:1.85; color:#7a7068; font-family:Inter,sans-serif; font-weight:300; margin-bottom:18px;\">Nascosto tra le montagne granitiche della Gallura, Domus Glamping è più di un posto dove dormire: è un'esperienza sensoriale completa. Abbiamo costruito i nostri domos geodésici in armonia con la terra — circondata da coltivazioni organiche di lavanda, elicriso e salvia selvatica che profumano l'aria in ogni stagione.</p><p style=\"font-size:16px; line-height:1.85; color:#7a7068; font-family:Inter,sans-serif; font-weight:300; margin-bottom:18px;\">Qui il ritmo lo detta la natura. Al mattino, il cinguettio degli uccelli sostituisce la sveglia. La sera, il cielo limpido della Gallura si apre sopra di te con milioni di stelle. Non è una vacanza — è un ritorno a ciò che conta davvero.</p><p style=\"font-size:16px; line-height:1.85; color:#7a7068; font-family:Inter,sans-serif; font-weight:300;\">Domus Glamping è per chi cerca il <em style=\"color:#9b8ec4;\">slow travel</em> nel suo significato più profondo: rallentare, respirare, sentire.</p>"
+          "elements": [
+            {
+              "id": "hero003",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"text-align:center;\"><span style=\"display:inline-block;border:1px solid rgba(201,168,76,.45);padding:7px 18px;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#c9a84c;font-family:Inter,sans-serif;\">&#10022; Gallura, Sardegna &middot; Slow Travel di Lusso</span></div>"
+              }
+            },
+            {
+              "id": "hero004",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Svegliati tra <em>lavanda</em> e stelle di Gallura",
+                "header_size": "h1",
+                "align": "center",
+                "typography_font_family": "Cormorant Garamond",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 80
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": 54
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 38
+                },
+                "typography_font_weight": "300",
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.06
+                },
+                "title_color": "#fdfcfa",
+                "padding": {
+                  "unit": "px",
+                  "top": "20",
+                  "right": "60",
+                  "bottom": "0",
+                  "left": "60",
+                  "isLinked": false
+                }
+              }
+            },
+            {
+              "id": "hero005",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<p style=\"text-align:center;font-size:17px;color:rgba(253,252,250,0.82);line-height:1.75;max-width:540px;margin:20px auto 0;font-family:Inter,sans-serif;font-weight:300;\">Domos geod&eacute;sici immersi in un bosco di lecci millenari e coltivazioni aromatiche selvatiche. Dove il tempo non esiste &mdash; solo il profumo dell&apos;elicriso e il silenzio vero.</p>"
+              }
+            },
+            {
+              "id": "hero006",
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 36
+                }
+              }
+            },
+            {
+              "id": "hero007",
+              "elType": "widget",
+              "widgetType": "button",
+              "settings": {
+                "text": "Riserva il Tuo Domo &rarr;",
+                "link": {
+                  "url": "#lista-attesa"
+                },
+                "align": "center",
+                "background_color": "#9b8ec4",
+                "button_text_color": "#fdfcfa",
+                "hover_background_color": "#7a6daa",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 2
+                },
+                "typography_text_transform": "uppercase",
+                "border_radius": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                },
+                "text_padding": {
+                  "unit": "px",
+                  "top": "16",
+                  "right": "44",
+                  "bottom": "16",
+                  "left": "44",
+                  "isLinked": false
+                }
+              }
             }
-          }
-        ]
-      }
-    ]
-  },
-
-  {
-    "id": "exp00001",
-    "elType": "section",
-    "settings": {
-      "background_background": "classic",
-      "background_color": "#f5f0e8",
-      "padding": { "unit": "px", "top": "100", "right": "60", "bottom": "100", "left": "60", "isLinked": false },
-      "layout": "full_width"
+          ]
+        }
+      ]
     },
-    "elements": [{
-      "id": "exp00002",
-      "elType": "column",
-      "settings": { "column_width": { "unit": "%", "size": 100 } },
+    {
+      "id": "sens001",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#e8e4f0",
+        "padding": {
+          "unit": "px",
+          "top": "50",
+          "right": "40",
+          "bottom": "50",
+          "left": "40",
+          "isLinked": false
+        },
+        "layout": "full_width",
+        "gap": "no"
+      },
       "elements": [
-        { "id": "exp00003", "elType": "widget", "widgetType": "text-editor", "settings": { "editor": "<p style=\"font-size:11px; letter-spacing:5px; text-transform:uppercase; color:#c9a84c; font-family:Inter,sans-serif; margin-bottom:12px;\">✦ Cosa Vivrai</p>" } },
         {
-          "id": "exp00004",
-          "elType": "widget",
-          "widgetType": "heading",
+          "id": "sens002",
+          "elType": "column",
           "settings": {
-            "title": "Quattro esperienze che cambiano prospettiva",
-            "header_size": "h2",
-            "typography_font_family": "Cormorant Garamond",
-            "typography_font_size": { "unit": "px", "size": 48 },
-            "typography_font_weight": "300",
-            "title_color": "#1e2a1f",
-            "padding": { "unit": "px", "top": "0", "right": "0", "bottom": "14", "left": "0", "isLinked": false }
-          }
-        },
-        { "id": "exp00005", "elType": "widget", "widgetType": "text-editor", "settings": { "editor": "<p style=\"font-size:16px; line-height:1.8; color:#7a7068; font-family:Inter,sans-serif; font-weight:300; margin-bottom:50px;\">Non sono attività. Sono momenti che portate a casa nel corpo, nei sensi, nella memoria.</p>" } }
-      ]
-    }]
-  },
-  {
-    "id": "exp00010",
-    "elType": "section",
-    "settings": {
-      "background_background": "classic",
-      "background_color": "#f5f0e8",
-      "padding": { "unit": "px", "top": "0", "right": "60", "bottom": "100", "left": "60", "isLinked": false },
-      "layout": "full_width",
-      "gap": "extended"
-    },
-    "elements": [
-      {
-        "id": "exp00011",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 50 } },
-        "elements": [
-          { "id": "exp00012", "elType": "widget", "widgetType": "image", "settings": { "image": { "url": "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=700&auto=format&fit=crop&q=80", "source": "external" }, "height": { "unit": "px", "size": 260 }, "object-fit": "cover" } },
-          { "id": "exp00013", "elType": "widget", "widgetType": "html", "settings": { "html": "<div style=\"background:#fdfcfa; padding:28px;\"><span style=\"font-size:26px; display:block; margin-bottom:12px;\">🌌</span><h3 style=\"font-family:Cormorant Garamond,serif; font-size:24px; font-weight:400; color:#1e2a1f; margin-bottom:10px;\">Stargazing dal Domo</h3><p style=\"font-size:14px; line-height:1.75; color:#7a7068; font-family:Inter,sans-serif;\">Il soffitto trasparente del tuo domo è il tuo osservatorio personale. Con la mappa stellare in mano e il silenzio della Gallura attorno, la Via Lattea diventa qualcosa di fisico, reale, commovente.</p></div>" } }
-        ]
-      },
-      {
-        "id": "exp00014",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 50 } },
-        "elements": [
-          { "id": "exp00015", "elType": "widget", "widgetType": "image", "settings": { "image": { "url": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=700&auto=format&fit=crop&q=80", "source": "external" }, "height": { "unit": "px", "size": 260 }, "object-fit": "cover" } },
-          { "id": "exp00016", "elType": "widget", "widgetType": "html", "settings": { "html": "<div style=\"background:#fdfcfa; padding:28px;\"><span style=\"font-size:26px; display:block; margin-bottom:12px;\">💜</span><h3 style=\"font-family:Cormorant Garamond,serif; font-size:24px; font-weight:400; color:#1e2a1f; margin-bottom:10px;\">Aromaterapia nei Campi</h3><p style=\"font-size:14px; line-height:1.75; color:#7a7068; font-family:Inter,sans-serif;\">Passeggia al tramonto tra i filari di lavanda e elicriso in fiore. I nostri ospiti raccolgono erbe aromatiche selvatiche con la guida erborista locale, preparando oli essenziali da portare a casa.</p></div>" } }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "exp00020",
-    "elType": "section",
-    "settings": {
-      "background_background": "classic",
-      "background_color": "#f5f0e8",
-      "padding": { "unit": "px", "top": "0", "right": "60", "bottom": "100", "left": "60", "isLinked": false },
-      "layout": "full_width",
-      "gap": "extended"
-    },
-    "elements": [
-      {
-        "id": "exp00021",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 50 } },
-        "elements": [
-          { "id": "exp00022", "elType": "widget", "widgetType": "image", "settings": { "image": { "url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&auto=format&fit=crop&q=80", "source": "external" }, "height": { "unit": "px", "size": 260 }, "object-fit": "cover" } },
-          { "id": "exp00023", "elType": "widget", "widgetType": "html", "settings": { "html": "<div style=\"background:#fdfcfa; padding:28px;\"><span style=\"font-size:26px; display:block; margin-bottom:12px;\">🌳</span><h3 style=\"font-family:Cormorant Garamond,serif; font-size:24px; font-weight:400; color:#1e2a1f; margin-bottom:10px;\">Trekking tra i Lecci Millenari</h3><p style=\"font-size:14px; line-height:1.75; color:#7a7068; font-family:Inter,sans-serif;\">Sentieri ombreggiati attraverso il bosco di querce da sughero e lecci che hanno visto passare i nuragici. Guida naturalista inclusa che racconta la Sardegna che non appare sulle cartoline.</p></div>" } }
-        ]
-      },
-      {
-        "id": "exp00024",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 50 } },
-        "elements": [
-          { "id": "exp00025", "elType": "widget", "widgetType": "image", "settings": { "image": { "url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&auto=format&fit=crop&q=80", "source": "external" }, "height": { "unit": "px", "size": 260 }, "object-fit": "cover" } },
-          { "id": "exp00026", "elType": "widget", "widgetType": "html", "settings": { "html": "<div style=\"background:#fdfcfa; padding:28px;\"><span style=\"font-size:26px; display:block; margin-bottom:12px;\">🧺</span><h3 style=\"font-family:Cormorant Garamond,serif; font-size:24px; font-weight:400; color:#1e2a1f; margin-bottom:10px;\">Colazione Sensoriale al Risveglio</h3><p style=\"font-size:14px; line-height:1.75; color:#7a7068; font-family:Inter,sans-serif;\">Il cestino della colazione arriva alla porta del tuo domo: miele di corbezzolo DOP, ricotta fresca di pecora, pane carasau croccante, confetture di mirto e frutta di stagione dal nostro orto.</p></div>" } }
-        ]
-      }
-    ]
-  },
-
-  {
-    "id": "domo0001",
-    "elType": "section",
-    "settings": {
-      "background_background": "classic",
-      "background_color": "#1e2a1f",
-      "padding": { "unit": "px", "top": "100", "right": "60", "bottom": "100", "left": "60", "isLinked": false },
-      "layout": "full_width",
-      "gap": "extended"
-    },
-    "elements": [
-      {
-        "id": "domo0002",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 55 } },
-        "elements": [
-          { "id": "domo0003", "elType": "widget", "widgetType": "text-editor", "settings": { "editor": "<p style=\"font-size:11px; letter-spacing:5px; text-transform:uppercase; color:#c9a84c; font-family:Inter,sans-serif; margin-bottom:12px;\">🏡 Le Installazioni</p>" } },
-          {
-            "id": "domo0004",
-            "elType": "widget",
-            "widgetType": "heading",
-            "settings": {
-              "title": "Il domo: lusso <em>senza artifici</em>",
-              "header_size": "h2",
-              "typography_font_family": "Cormorant Garamond",
-              "typography_font_size": { "unit": "px", "size": 48 },
-              "typography_font_weight": "300",
-              "title_color": "#fdfcfa",
-              "padding": { "unit": "px", "top": "0", "right": "0", "bottom": "20", "left": "0", "isLinked": false }
+            "column_width": {
+              "unit": "%",
+              "size": 25
             }
           },
-          { "id": "domo0005", "elType": "widget", "widgetType": "text-editor", "settings": { "editor": "<p style=\"font-size:15px; line-height:1.85; color:rgba(253,252,250,0.62); font-family:Inter,sans-serif; font-weight:300; margin-bottom:32px;\">Ogni domo geodésico è progettato per massimizzare il contatto con l'esterno senza rinunciare al comfort. La struttura circolare amplifica i suoni della natura trasformando il tuo spazio in un'esperienza immersiva totale.</p>" } },
-          {
-            "id": "domo0006",
-            "elType": "widget",
-            "widgetType": "html",
-            "settings": {
-              "html": "<div style=\"display:grid; grid-template-columns:1fr 1fr; gap:20px;\">\n  <div style=\"border-left:2px solid #c9a84c; padding:10px 0 10px 16px;\">\n    <h4 style=\"font-family:Cormorant Garamond,serif; font-size:17px; color:#c9a84c; margin-bottom:5px;\">Letto King Size</h4>\n    <p style=\"font-size:12px; color:rgba(253,252,250,0.5); line-height:1.6; font-family:Inter,sans-serif;\">Biancheria artigianale sarda, materasso premium, cuscini in piuma d'oca</p>\n  </div>\n  <div style=\"border-left:2px solid #c9a84c; padding:10px 0 10px 16px;\">\n    <h4 style=\"font-family:Cormorant Garamond,serif; font-size:17px; color:#c9a84c; margin-bottom:5px;\">Bagno Privato Esterno</h4>\n    <p style=\"font-size:12px; color:rgba(253,252,250,0.5); line-height:1.6; font-family:Inter,sans-serif;\">Doccia a cielo aperto, prodotti biologici locali all'elicriso</p>\n  </div>\n  <div style=\"border-left:2px solid #c9a84c; padding:10px 0 10px 16px;\">\n    <h4 style=\"font-family:Cormorant Garamond,serif; font-size:17px; color:#c9a84c; margin-bottom:5px;\">Cupola Trasparente</h4>\n    <p style=\"font-size:12px; color:rgba(253,252,250,0.5); line-height:1.6; font-family:Inter,sans-serif;\">Finestra zenitale apribile per dormire sotto le stelle della Gallura</p>\n  </div>\n  <div style=\"border-left:2px solid #c9a84c; padding:10px 0 10px 16px;\">\n    <h4 style=\"font-family:Cormorant Garamond,serif; font-size:17px; color:#c9a84c; margin-bottom:5px;\">Terrazza Privata</h4>\n    <p style=\"font-size:12px; color:rgba(253,252,250,0.5); line-height:1.6; font-family:Inter,sans-serif;\">Hamaca, tavolo per due e braciere. Vista sul bosco di lecci</p>\n  </div>\n  <div style=\"border-left:2px solid #c9a84c; padding:10px 0 10px 16px;\">\n    <h4 style=\"font-family:Cormorant Garamond,serif; font-size:17px; color:#c9a84c; margin-bottom:5px;\">Climatizzazione Naturale</h4>\n    <p style=\"font-size:12px; color:rgba(253,252,250,0.5); line-height:1.6; font-family:Inter,sans-serif;\">Ventilazione passiva ad alta efficienza — zero energia sprecata</p>\n  </div>\n  <div style=\"border-left:2px solid #c9a84c; padding:10px 0 10px 16px;\">\n    <h4 style=\"font-family:Cormorant Garamond,serif; font-size:17px; color:#c9a84c; margin-bottom:5px;\">Design Sostenibile</h4>\n    <p style=\"font-size:12px; color:rgba(253,252,250,0.5); line-height:1.6; font-family:Inter,sans-serif;\">Legno certificato FSC, energia 100% solare, zero plastiche monouso</p>\n  </div>\n</div>"
+          "elements": [
+            {
+              "id": "sens003",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"padding:20px 24px;border-right:1px solid rgba(155,142,196,.25);\"><div style=\"font-size:28px;margin-bottom:10px;\">&#127807;</div><h4 style=\"font-family:Cormorant Garamond,serif;font-size:18px;font-weight:400;color:#1e2a1f;margin-bottom:6px;\">Profumo di Elicriso</h4><p style=\"font-size:13px;line-height:1.65;color:#7a7068;font-family:Inter,sans-serif;\">L&apos;oro di Sardegna fiorisce intorno al tuo domo. Un&apos;aromaterapia naturale senza uguale.</p></div>"
+              }
             }
-          }
-        ]
-      },
-      {
-        "id": "domo0007",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 45 } },
-        "elements": [{
-          "id": "domo0008",
-          "elType": "widget",
-          "widgetType": "image",
+          ]
+        },
+        {
+          "id": "sens004",
+          "elType": "column",
           "settings": {
-            "image": { "url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop&q=80", "source": "external", "alt": "Interior domo geodésico" },
-            "height": { "unit": "px", "size": 520 },
-            "object-fit": "cover"
+            "column_width": {
+              "unit": "%",
+              "size": 25
+            }
+          },
+          "elements": [
+            {
+              "id": "sens005",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"padding:20px 24px;border-right:1px solid rgba(155,142,196,.25);\"><div style=\"font-size:28px;margin-bottom:10px;\">&#127756;</div><h4 style=\"font-family:Cormorant Garamond,serif;font-size:18px;font-weight:400;color:#1e2a1f;margin-bottom:6px;\">Cielo Stellato Privato</h4><p style=\"font-size:13px;line-height:1.65;color:#7a7068;font-family:Inter,sans-serif;\">Zero inquinamento luminoso. La cupola del tuo domo &egrave; il tuo telescopio personale.</p></div>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sens006",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 25
+            }
+          },
+          "elements": [
+            {
+              "id": "sens007",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"padding:20px 24px;border-right:1px solid rgba(155,142,196,.25);\"><div style=\"font-size:28px;margin-bottom:10px;\">&#127811;</div><h4 style=\"font-family:Cormorant Garamond,serif;font-size:18px;font-weight:400;color:#1e2a1f;margin-bottom:6px;\">Bosco di Lecci Millenari</h4><p style=\"font-size:13px;line-height:1.65;color:#7a7068;font-family:Inter,sans-serif;\">Sentieri silenziosi tra querce antichissime. Il suono della brezza e nient&apos;altro.</p></div>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "sens008",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 25
+            }
+          },
+          "elements": [
+            {
+              "id": "sens009",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"padding:20px 24px;\"><div style=\"font-size:28px;margin-bottom:10px;\">&#129346;</div><h4 style=\"font-family:Cormorant Garamond,serif;font-size:18px;font-weight:400;color:#1e2a1f;margin-bottom:6px;\">Colazione dai Produttori</h4><p style=\"font-size:13px;line-height:1.65;color:#7a7068;font-family:Inter,sans-serif;\">Miele di corbezzolo, formaggi di capra, pane carasau e marmellate artigianali.</p></div>"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intr001",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#fdfcfa",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "60",
+          "bottom": "100",
+          "left": "60",
+          "isLinked": false
+        },
+        "layout": "full_width",
+        "gap": "extended"
+      },
+      "elements": [
+        {
+          "id": "intr002",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 50
+            }
+          },
+          "elements": [
+            {
+              "id": "intr003",
+              "elType": "widget",
+              "widgetType": "image",
+              "settings": {
+                "image": {
+                  "url": "https://images.unsplash.com/photo-1607082349566-187342175e2f?w=900&auto=format&fit=crop&q=80",
+                  "source": "external",
+                  "alt": ""
+                },
+                "image_size": "full",
+                "height": {
+                  "unit": "px",
+                  "size": 540
+                },
+                "object-fit": "cover"
+              }
+            }
+          ]
+        },
+        {
+          "id": "intr004",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 50
+            }
+          },
+          "elements": [
+            {
+              "id": "intr005",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style=\"font-size:11px;letter-spacing:5px;text-transform:uppercase;font-family:Inter,sans-serif;margin-bottom:12px;color:#9b8ec4;\">&#127807; La nostra storia</p>"
+              }
+            },
+            {
+              "id": "intr006",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Un angolo di <em>Sardegna</em> rimasto intatto",
+                "header_size": "h2",
+                "align": "left",
+                "typography_font_family": "Cormorant Garamond",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 48
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 33
+                },
+                "typography_font_weight": "300",
+                "title_color": "#1e2a1f"
+              }
+            },
+            {
+              "id": "intr007",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style=\"font-size:16px;line-height:1.85;color:#7a7068;font-family:Inter,sans-serif;font-weight:300;margin-bottom:18px;\">Nascosto tra le montagne granitiche della Gallura, Domus Glamping &egrave; pi&ugrave; di un posto dove dormire: &egrave; un&apos;esperienza sensoriale completa. Abbiamo costruito i nostri domos geod&eacute;sici in armonia con la terra &mdash; circondata da coltivazioni organiche di lavanda, elicriso e salvia selvatica.</p><p style=\"font-size:16px;line-height:1.85;color:#7a7068;font-family:Inter,sans-serif;font-weight:300;margin-bottom:18px;\">Qui il ritmo lo detta la natura. Al mattino, il cinguettio degli uccelli sostituisce la sveglia. La sera, il cielo limpido della Gallura si apre sopra di te con milioni di stelle. Non &egrave; una vacanza &mdash; &egrave; un ritorno a ci&ograve; che conta davvero.</p><p style=\"font-size:16px;line-height:1.85;color:#7a7068;font-family:Inter,sans-serif;font-weight:300;\">Domus Glamping &egrave; per chi cerca il <em style=\"color:#9b8ec4;\">slow travel</em> nel suo significato pi&ugrave; profondo: rallentare, respirare, sentire.</p>"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exph001",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#f5f0e8",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "60",
+          "bottom": "20",
+          "left": "60",
+          "isLinked": false
+        },
+        "layout": "full_width",
+        "gap": "no"
+      },
+      "elements": [
+        {
+          "id": "exph002",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 100
+            }
+          },
+          "elements": [
+            {
+              "id": "exph003",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style=\"font-size:11px;letter-spacing:5px;text-transform:uppercase;font-family:Inter,sans-serif;margin-bottom:12px;color:#c9a84c;\">&#10022; Cosa Vivrai</p>"
+              }
+            },
+            {
+              "id": "exph004",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Quattro esperienze che cambiano prospettiva",
+                "header_size": "h2",
+                "align": "left",
+                "typography_font_family": "Cormorant Garamond",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 48
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 33
+                },
+                "typography_font_weight": "300",
+                "title_color": "#1e2a1f"
+              }
+            },
+            {
+              "id": "exph005",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style=\"font-size:16px;line-height:1.85;color:#7a7068;font-family:Inter,sans-serif;font-weight:300;margin-bottom:0;\">Non sono attivit&agrave;. Sono momenti che portate a casa nel corpo, nei sensi, nella memoria.</p>"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "expg001",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#f5f0e8",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "60",
+          "bottom": "0",
+          "left": "60",
+          "isLinked": false
+        },
+        "layout": "full_width",
+        "gap": "extended"
+      },
+      "elements": [
+        {
+          "id": "expg002",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 50
+            }
+          },
+          "elements": [
+            {
+              "id": "expg003",
+              "elType": "widget",
+              "widgetType": "image",
+              "settings": {
+                "image": {
+                  "url": "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?w=700&auto=format&fit=crop&q=80",
+                  "source": "external",
+                  "alt": ""
+                },
+                "image_size": "full",
+                "height": {
+                  "unit": "px",
+                  "size": 260
+                },
+                "object-fit": "cover"
+              }
+            },
+            {
+              "id": "expg004",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"background:#fdfcfa;padding:28px;\"><span style=\"font-size:26px;display:block;margin-bottom:12px;\">&#127756;</span><h3 style=\"font-family:Cormorant Garamond,serif;font-size:24px;font-weight:400;color:#1e2a1f;margin-bottom:10px;\">Stargazing dal Domo</h3><p style=\"font-size:14px;line-height:1.75;color:#7a7068;font-family:Inter,sans-serif;\">Il soffitto trasparente del tuo domo &egrave; il tuo osservatorio personale. Con la mappa stellare in mano e il silenzio della Gallura attorno, la Via Lattea diventa qualcosa di fisico, reale, commovente. Un&apos;esperienza che ridimensiona tutto.</p></div>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "expg005",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 50
+            }
+          },
+          "elements": [
+            {
+              "id": "expg006",
+              "elType": "widget",
+              "widgetType": "image",
+              "settings": {
+                "image": {
+                  "url": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=700&auto=format&fit=crop&q=80",
+                  "source": "external",
+                  "alt": ""
+                },
+                "image_size": "full",
+                "height": {
+                  "unit": "px",
+                  "size": 260
+                },
+                "object-fit": "cover"
+              }
+            },
+            {
+              "id": "expg007",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"background:#fdfcfa;padding:28px;\"><span style=\"font-size:26px;display:block;margin-bottom:12px;\">&#128156;</span><h3 style=\"font-family:Cormorant Garamond,serif;font-size:24px;font-weight:400;color:#1e2a1f;margin-bottom:10px;\">Aromaterapia nei Campi</h3><p style=\"font-size:14px;line-height:1.75;color:#7a7068;font-family:Inter,sans-serif;\">Passeggia al tramonto tra i filari di lavanda e elicriso in fiore. I nostri ospiti raccolgono erbe aromatiche selvatiche con la guida erborista locale, preparando oli essenziali da portare a casa. Il profumo di Sardegna nel tuo bagaglio.</p></div>"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "expg010",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#f5f0e8",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "60",
+          "bottom": "100",
+          "left": "60",
+          "isLinked": false
+        },
+        "layout": "full_width",
+        "gap": "extended"
+      },
+      "elements": [
+        {
+          "id": "expg011",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 50
+            }
+          },
+          "elements": [
+            {
+              "id": "expg012",
+              "elType": "widget",
+              "widgetType": "image",
+              "settings": {
+                "image": {
+                  "url": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&auto=format&fit=crop&q=80",
+                  "source": "external",
+                  "alt": ""
+                },
+                "image_size": "full",
+                "height": {
+                  "unit": "px",
+                  "size": 260
+                },
+                "object-fit": "cover"
+              }
+            },
+            {
+              "id": "expg013",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"background:#fdfcfa;padding:28px;\"><span style=\"font-size:26px;display:block;margin-bottom:12px;\">&#127795;</span><h3 style=\"font-family:Cormorant Garamond,serif;font-size:24px;font-weight:400;color:#1e2a1f;margin-bottom:10px;\">Trekking tra i Lecci Millenari</h3><p style=\"font-size:14px;line-height:1.75;color:#7a7068;font-family:Inter,sans-serif;\">Sentieri ombreggiati attraverso il bosco di querce da sughero e lecci che hanno visto passare i nuragici. Guida naturalista inclusa che racconta la Sardegna che non appare sulle cartoline. Un&apos;ora di cammino, una vita di ricordi.</p></div>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "expg014",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 50
+            }
+          },
+          "elements": [
+            {
+              "id": "expg015",
+              "elType": "widget",
+              "widgetType": "image",
+              "settings": {
+                "image": {
+                  "url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&auto=format&fit=crop&q=80",
+                  "source": "external",
+                  "alt": ""
+                },
+                "image_size": "full",
+                "height": {
+                  "unit": "px",
+                  "size": 260
+                },
+                "object-fit": "cover"
+              }
+            },
+            {
+              "id": "expg016",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"background:#fdfcfa;padding:28px;\"><span style=\"font-size:26px;display:block;margin-bottom:12px;\">&#129346;</span><h3 style=\"font-family:Cormorant Garamond,serif;font-size:24px;font-weight:400;color:#1e2a1f;margin-bottom:10px;\">Colazione Sensoriale al Risveglio</h3><p style=\"font-size:14px;line-height:1.75;color:#7a7068;font-family:Inter,sans-serif;\">Niente buffet. Ogni mattina, il cestino della colazione arriva alla porta del tuo domo: miele di corbezzolo DOP, ricotta fresca di pecora, pane carasau croccante, confetture di mirto e frutta di stagione dal nostro orto.</p></div>"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "domo001",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#1e2a1f",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "60",
+          "bottom": "100",
+          "left": "60",
+          "isLinked": false
+        },
+        "layout": "full_width",
+        "gap": "extended"
+      },
+      "elements": [
+        {
+          "id": "domo002",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 55
+            }
+          },
+          "elements": [
+            {
+              "id": "domo003",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style=\"font-size:11px;letter-spacing:5px;text-transform:uppercase;font-family:Inter,sans-serif;margin-bottom:12px;color:#c9a84c;\">&#127968; Le Installazioni</p>"
+              }
+            },
+            {
+              "id": "domo004",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Il domo: lusso <em>senza artifici</em>",
+                "header_size": "h2",
+                "typography_font_family": "Cormorant Garamond",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 48
+                },
+                "typography_font_weight": "300",
+                "title_color": "#fdfcfa",
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "20",
+                  "left": "0",
+                  "isLinked": false
+                }
+              }
+            },
+            {
+              "id": "domo005",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style=\"font-size:15px;line-height:1.85;color:rgba(253,252,250,0.62);font-family:Inter,sans-serif;font-weight:300;margin-bottom:8px;\">Ogni domo geod&eacute;sico &egrave; progettato per massimizzare il contatto con l&apos;esterno senza rinunciare al comfort. La struttura circolare amplifica i suoni della natura trasformando il tuo spazio in un&apos;esperienza immersiva totale.</p>"
+              }
+            },
+            {
+              "id": "domo006",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px;\"><div style=\"border-left:2px solid #c9a84c;padding:10px 0 10px 16px;\"><h4 style=\"font-family:Cormorant Garamond,serif;font-size:17px;color:#c9a84c;margin-bottom:5px;\">Letto King Size</h4><p style=\"font-size:12px;color:rgba(253,252,250,0.5);line-height:1.6;font-family:Inter,sans-serif;\">Biancheria artigianale sarda, materasso premium, cuscini in piuma d&apos;oca</p></div><div style=\"border-left:2px solid #c9a84c;padding:10px 0 10px 16px;\"><h4 style=\"font-family:Cormorant Garamond,serif;font-size:17px;color:#c9a84c;margin-bottom:5px;\">Bagno Privato Esterno</h4><p style=\"font-size:12px;color:rgba(253,252,250,0.5);line-height:1.6;font-family:Inter,sans-serif;\">Doccia a cielo aperto, prodotti biologici locali all&apos;elicriso</p></div><div style=\"border-left:2px solid #c9a84c;padding:10px 0 10px 16px;\"><h4 style=\"font-family:Cormorant Garamond,serif;font-size:17px;color:#c9a84c;margin-bottom:5px;\">Cupola Trasparente</h4><p style=\"font-size:12px;color:rgba(253,252,250,0.5);line-height:1.6;font-family:Inter,sans-serif;\">Finestra zenitale apribile per dormire sotto le stelle della Gallura</p></div><div style=\"border-left:2px solid #c9a84c;padding:10px 0 10px 16px;\"><h4 style=\"font-family:Cormorant Garamond,serif;font-size:17px;color:#c9a84c;margin-bottom:5px;\">Terrazza Privata</h4><p style=\"font-size:12px;color:rgba(253,252,250,0.5);line-height:1.6;font-family:Inter,sans-serif;\">Hamaca, tavolo per due e braciere. Vista sul bosco di lecci</p></div><div style=\"border-left:2px solid #c9a84c;padding:10px 0 10px 16px;\"><h4 style=\"font-family:Cormorant Garamond,serif;font-size:17px;color:#c9a84c;margin-bottom:5px;\">Climatizzazione Naturale</h4><p style=\"font-size:12px;color:rgba(253,252,250,0.5);line-height:1.6;font-family:Inter,sans-serif;\">Ventilazione passiva ad alta efficienza &mdash; zero energia sprecata</p></div><div style=\"border-left:2px solid #c9a84c;padding:10px 0 10px 16px;\"><h4 style=\"font-family:Cormorant Garamond,serif;font-size:17px;color:#c9a84c;margin-bottom:5px;\">Design Sostenibile</h4><p style=\"font-size:12px;color:rgba(253,252,250,0.5);line-height:1.6;font-family:Inter,sans-serif;\">Legno certificato FSC, energia 100% solare, zero plastiche monouso</p></div></div>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "domo007",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 45
+            }
+          },
+          "elements": [
+            {
+              "id": "domo008",
+              "elType": "widget",
+              "widgetType": "image",
+              "settings": {
+                "image": {
+                  "url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&auto=format&fit=crop&q=80",
+                  "source": "external",
+                  "alt": ""
+                },
+                "image_size": "full",
+                "height": {
+                  "unit": "px",
+                  "size": 520
+                },
+                "object-fit": "cover"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "test001",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#fdfcfa",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "60",
+          "bottom": "100",
+          "left": "60",
+          "isLinked": false
+        },
+        "layout": "full_width",
+        "gap": "no"
+      },
+      "elements": [
+        {
+          "id": "test002",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 100
+            }
+          },
+          "elements": [
+            {
+              "id": "test003",
+              "elType": "widget",
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "<p style=\"font-size:11px;letter-spacing:5px;text-transform:uppercase;font-family:Inter,sans-serif;margin-bottom:12px;color:#9b8ec4;text-align:center;\">&#128172; Cosa Dicono i Nostri Ospiti</p>"
+              }
+            },
+            {
+              "id": "test004",
+              "elType": "widget",
+              "widgetType": "heading",
+              "settings": {
+                "title": "Parole che non <em>riusciamo ad inventare</em>",
+                "header_size": "h2",
+                "align": "center",
+                "typography_font_family": "Cormorant Garamond",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 46
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 32
+                },
+                "typography_font_weight": "300",
+                "title_color": "#1e2a1f"
+              }
+            },
+            {
+              "id": "test005",
+              "elType": "widget",
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 40
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "test010",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#fdfcfa",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "60",
+          "bottom": "100",
+          "left": "60",
+          "isLinked": false
+        },
+        "layout": "full_width",
+        "gap": "extended"
+      },
+      "elements": [
+        {
+          "id": "test011",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 33.33
+            }
+          },
+          "elements": [
+            {
+              "id": "test012",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"background:#f5f0e8;padding:36px;border-top:3px solid #9b8ec4;height:100%;\"><div style=\"color:#c9a84c;font-size:14px;letter-spacing:3px;margin-bottom:18px;\">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style=\"font-family:Cormorant Garamond,serif;font-size:19px;font-style:italic;font-weight:400;line-height:1.6;color:#1e2a1f;margin-bottom:20px;\">&ldquo;Ho aperto gli occhi alle 3 di notte perch&eacute; il profumo della lavanda era cos&igrave; intenso da sembrare un sogno. Sopra di me, la Via Lattea. Sono tornata a Milano con qualcosa che mancava da anni.&rdquo;</p><p style=\"font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#7a7068;font-family:Inter,sans-serif;\">&mdash; Alessandra M.</p><p style=\"font-size:12px;color:#9b8ec4;margin-top:4px;font-family:Inter,sans-serif;\">Milano &middot; Luglio 2024</p></div>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "test013",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 33.33
+            }
+          },
+          "elements": [
+            {
+              "id": "test014",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"background:#f5f0e8;padding:36px;border-top:3px solid #9b8ec4;height:100%;\"><div style=\"color:#c9a84c;font-size:14px;letter-spacing:3px;margin-bottom:18px;\">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style=\"font-family:Cormorant Garamond,serif;font-size:19px;font-style:italic;font-weight:400;line-height:1.6;color:#1e2a1f;margin-bottom:20px;\">&ldquo;Siamo andati per 3 notti e siamo rimasti 6. La guida naturalista del trekking tra i lecci ci ha cambiato il modo di guardare gli alberi, la Sardegna, forse noi stessi. Un posto che cura.&rdquo;</p><p style=\"font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#7a7068;font-family:Inter,sans-serif;\">&mdash; Marco &amp; Laura P.</p><p style=\"font-size:12px;color:#9b8ec4;margin-top:4px;font-family:Inter,sans-serif;\">Berlino &middot; Agosto 2024</p></div>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "test015",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 33.33
+            }
+          },
+          "elements": [
+            {
+              "id": "test016",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"background:#f5f0e8;padding:36px;border-top:3px solid #9b8ec4;height:100%;\"><div style=\"color:#c9a84c;font-size:14px;letter-spacing:3px;margin-bottom:18px;\">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p style=\"font-family:Cormorant Garamond,serif;font-size:19px;font-style:italic;font-weight:400;line-height:1.6;color:#1e2a1f;margin-bottom:20px;\">&ldquo;La colazione con la ricotta fresca e il miele di corbezzolo &egrave; la cosa pi&ugrave; buona che abbia mangiato in vita mia. Il domo ha questo silenzio speciale: senti tutto, ma il rumore del mondo &egrave; sparito.&rdquo;</p><p style=\"font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#7a7068;font-family:Inter,sans-serif;\">&mdash; Chiara F.</p><p style=\"font-size:12px;color:#9b8ec4;margin-top:4px;font-family:Inter,sans-serif;\">Roma &middot; Settembre 2024</p></div>"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quot001",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "gradient",
+        "background_gradient_angle": {
+          "unit": "deg",
+          "size": 135
+        },
+        "background_gradient_stops": [
+          {
+            "color": "#4a6442",
+            "virtual_position": 0
+          },
+          {
+            "color": "#1e2a1f",
+            "virtual_position": 100
           }
-        }]
-      }
-    ]
-  },
-
-  {
-    "id": "test0001",
-    "elType": "section",
-    "settings": {
-      "background_background": "classic",
-      "background_color": "#fdfcfa",
-      "padding": { "unit": "px", "top": "100", "right": "60", "bottom": "100", "left": "60", "isLinked": false },
-      "layout": "full_width",
-      "gap": "extended"
-    },
-    "elements": [
-      {
-        "id": "test0002",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 100 } },
-        "elements": [
-          { "id": "test0003", "elType": "widget", "widgetType": "text-editor", "settings": { "editor": "<p style=\"font-size:11px; letter-spacing:5px; text-transform:uppercase; color:#9b8ec4; font-family:Inter,sans-serif; margin-bottom:12px; text-align:center;\">💬 Cosa Dicono i Nostri Ospiti</p>" } },
-          { "id": "test0004", "elType": "widget", "widgetType": "heading", "settings": { "title": "Parole che non <em>riusciamo ad inventare</em>", "header_size": "h2", "align": "center", "typography_font_family": "Cormorant Garamond", "typography_font_size": { "unit": "px", "size": 46 }, "typography_font_weight": "300", "title_color": "#1e2a1f", "padding": { "unit": "px", "top": "0", "right": "0", "bottom": "50", "left": "0", "isLinked": false } } }
-        ]
+        ],
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "60",
+          "bottom": "100",
+          "left": "60",
+          "isLinked": false
+        },
+        "layout": "full_width"
       },
-      {
-        "id": "test0010",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 33.33 } },
-        "elements": [{ "id": "test0011", "elType": "widget", "widgetType": "html", "settings": { "html": "<div style=\"background:#f5f0e8; padding:36px; border-top:3px solid #9b8ec4; height:100%;\"><div style=\"color:#c9a84c; font-size:14px; letter-spacing:3px; margin-bottom:18px;\">★★★★★</div><p style=\"font-family:Cormorant Garamond,serif; font-size:19px; font-style:italic; font-weight:400; line-height:1.6; color:#1e2a1f; margin-bottom:20px;\">"Ho aperto gli occhi alle 3 di notte perché il profumo della lavanda era così intenso da sembrare un sogno. Sopra di me, la Via Lattea. Sono tornata a Milano con qualcosa che mancava da anni."</p><p style=\"font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#7a7068; font-family:Inter,sans-serif;\">— Alessandra M.</p><p style=\"font-size:12px; color:#9b8ec4; margin-top:4px; font-family:Inter,sans-serif;\">Milano · Luglio 2024</p></div>" } }]
-      },
-      {
-        "id": "test0012",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 33.33 } },
-        "elements": [{ "id": "test0013", "elType": "widget", "widgetType": "html", "settings": { "html": "<div style=\"background:#f5f0e8; padding:36px; border-top:3px solid #9b8ec4; height:100%;\"><div style=\"color:#c9a84c; font-size:14px; letter-spacing:3px; margin-bottom:18px;\">★★★★★</div><p style=\"font-family:Cormorant Garamond,serif; font-size:19px; font-style:italic; font-weight:400; line-height:1.6; color:#1e2a1f; margin-bottom:20px;\">"Siamo andati per 3 notti e siamo rimasti 6. La guida naturalista del trekking tra i lecci ci ha cambiato il modo di guardare gli alberi, la Sardegna, forse noi stessi. Un posto che cura."</p><p style=\"font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#7a7068; font-family:Inter,sans-serif;\">— Marco &amp; Laura P.</p><p style=\"font-size:12px; color:#9b8ec4; margin-top:4px; font-family:Inter,sans-serif;\">Berlino · Agosto 2024</p></div>" } }]
-      },
-      {
-        "id": "test0014",
-        "elType": "column",
-        "settings": { "column_width": { "unit": "%", "size": 33.33 } },
-        "elements": [{ "id": "test0015", "elType": "widget", "widgetType": "html", "settings": { "html": "<div style=\"background:#f5f0e8; padding:36px; border-top:3px solid #9b8ec4; height:100%;\"><div style=\"color:#c9a84c; font-size:14px; letter-spacing:3px; margin-bottom:18px;\">★★★★★</div><p style=\"font-family:Cormorant Garamond,serif; font-size:19px; font-style:italic; font-weight:400; line-height:1.6; color:#1e2a1f; margin-bottom:20px;\">"La colazione con la ricotta fresca e il miele di corbezzolo è la cosa più buona che abbia mangiato in vita mia. Il domo ha questo silenzio speciale: senti tutto, ma il rumore del mondo è sparito."</p><p style=\"font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#7a7068; font-family:Inter,sans-serif;\">— Chiara F.</p><p style=\"font-size:12px; color:#9b8ec4; margin-top:4px; font-family:Inter,sans-serif;\">Roma · Settembre 2024</p></div>" } }]
-      }
-    ]
-  },
-
-  {
-    "id": "quot0001",
-    "elType": "section",
-    "settings": {
-      "background_background": "gradient",
-      "background_gradient_angle": { "unit": "deg", "size": 135 },
-      "background_gradient_stops": [
-        { "color": "#4a6442", "virtual_position": 0 },
-        { "color": "#1e2a1f", "virtual_position": 100 }
-      ],
-      "padding": { "unit": "px", "top": "100", "right": "60", "bottom": "100", "left": "60", "isLinked": false },
-      "layout": "full_width"
-    },
-    "elements": [{
-      "id": "quot0002",
-      "elType": "column",
-      "settings": { "column_width": { "unit": "%", "size": 100 } },
-      "elements": [{
-        "id": "quot0003",
-        "elType": "widget",
-        "widgetType": "text-editor",
-        "settings": {
-          "editor": "<blockquote style=\"font-family:Cormorant Garamond,serif; font-size:clamp(26px,3.8vw,42px); font-weight:300; font-style:italic; color:#fdfcfa; max-width:860px; margin:0 auto 20px; line-height:1.4; text-align:center;\">"Gallura non è una destinazione.<br>È uno stato d'animo che <span style='color:#9b8ec4;'>non dimentichi mai</span>."</blockquote><p style=\"text-align:center; font-size:11px; letter-spacing:4px; text-transform:uppercase; color:rgba(253,252,250,0.4); font-family:Inter,sans-serif;\">Domus Glamping · Valle della Gallura, Sardegna</p>"
+      "elements": [
+        {
+          "id": "quot002",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 100
+            }
+          },
+          "elements": [
+            {
+              "id": "quot003",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<blockquote style=\"font-family:Cormorant Garamond,serif;font-size:clamp(26px,3.8vw,42px);font-weight:300;font-style:italic;color:#fdfcfa;max-width:860px;margin:0 auto 20px;line-height:1.4;text-align:center;\">&ldquo;Gallura non &egrave; una destinazione.<br>&#200; uno stato d&apos;animo che <span style=\"color:#9b8ec4;\">non dimentichi mai</span>.&rdquo;</blockquote><p style=\"text-align:center;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:rgba(253,252,250,0.4);font-family:Inter,sans-serif;\">Domus Glamping &middot; Valle della Gallura, Sardegna</p>"
+              }
+            }
+          ]
         }
-      }]
-    }]
-  },
-
-  {
-    "id": "cta00001",
-    "elType": "section",
-    "settings": {
-      "background_background": "classic",
-      "background_color": "#e8e4f0",
-      "padding": { "unit": "px", "top": "100", "right": "60", "bottom": "100", "left": "60", "isLinked": false },
-      "layout": "full_width"
+      ]
     },
-    "elements": [{
-      "id": "cta00002",
-      "elType": "column",
-      "settings": { "column_width": { "unit": "%", "size": 100 } },
-      "elements": [{
-        "id": "cta00003",
-        "elType": "widget",
-        "widgetType": "html",
-        "settings": {
-          "html": "<div style=\"max-width:760px; margin:0 auto; background:#fdfcfa; padding:70px 60px; box-shadow:0 24px 80px rgba(155,142,196,0.15); text-align:center;\">\n  <div style=\"display:inline-block; background:#c9a84c; color:#fdfcfa; font-size:10px; letter-spacing:4px; text-transform:uppercase; padding:6px 16px; margin-bottom:28px; font-family:Inter,sans-serif;\">✦ Offerta Fondatori — Posti Limitati</div>\n  <h2 style=\"font-family:Cormorant Garamond,serif; font-size:clamp(28px,4vw,46px); font-weight:300; color:#1e2a1f; line-height:1.12; margin-bottom:16px;\">Sei pronto a <em style='font-style:italic;color:#9b8ec4;'>sentirti vivo</em> sul serio?</h2>\n  <p style=\"font-size:16px; line-height:1.8; color:#7a7068; font-family:Inter,sans-serif; font-weight:300; max-width:520px; margin:0 auto 28px;\">I nostri domos si riempiono settimane in anticipo. Unisciti alla lista d'attesa oggi e assicurati il tuo posto — con un privilegio esclusivo per chi arriva per primo.</p>\n  <div style=\"display:inline-flex; align-items:center; gap:12px; background:#f5efd6; border:1px solid rgba(201,168,76,.3); padding:14px 28px; margin-bottom:28px;\">\n    <span style=\"font-size:20px;\">🎁</span>\n    <div style=\"text-align:left;\">\n      <strong style=\"font-size:16px; color:#b56344; font-family:Inter,sans-serif;\">15% di sconto</strong>\n      <span style=\"font-size:14px; color:#3a3530; font-family:Inter,sans-serif;\"> per i primi 20 ospiti · Kit aromatico di benvenuto con elicriso e lavanda di Gallura incluso</span>\n    </div>\n  </div>\n  <form style=\"display:flex; max-width:440px; margin:0 auto 14px;\" onsubmit=\"this.querySelector('button').textContent='✓ Sei nella lista!'; this.querySelector('button').style.background='#4a6442'; this.querySelector('input').disabled=true; this.querySelector('button').disabled=true; event.preventDefault();\">\n    <input type=\"email\" placeholder=\"la-tua@email.com\" required style=\"flex:1; padding:14px 18px; border:1px solid rgba(200,184,154,.6); border-right:none; font-family:Inter,sans-serif; font-size:15px; outline:none; color:#3a3530; background:#fff;\" />\n    <button type=\"submit\" style=\"padding:14px 24px; background:#9b8ec4; border:none; color:#fdfcfa; font-family:Inter,sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; cursor:pointer; white-space:nowrap;\">Unisciti →</button>\n  </form>\n  <p style=\"font-size:12px; color:#7a7068; font-family:Inter,sans-serif;\">🔒 Nessuno spam. Solo disponibilità, offerte esclusive e storie di Gallura.</p>\n</div>"
+    {
+      "id": "cta0001",
+      "elType": "section",
+      "isInner": false,
+      "settings": {
+        "background_background": "classic",
+        "background_color": "#e8e4f0",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "60",
+          "bottom": "100",
+          "left": "60",
+          "isLinked": false
+        },
+        "layout": "full_width",
+        "gap": "no"
+      },
+      "elements": [
+        {
+          "id": "cta0002",
+          "elType": "column",
+          "settings": {
+            "column_width": {
+              "unit": "%",
+              "size": 100
+            }
+          },
+          "elements": [
+            {
+              "id": "cta0003",
+              "elType": "widget",
+              "widgetType": "html",
+              "settings": {
+                "html": "<div style=\"max-width:760px;margin:0 auto;background:#fdfcfa;padding:70px 60px;box-shadow:0 24px 80px rgba(155,142,196,0.15);text-align:center;\">\n  <div style=\"display:inline-block;background:#c9a84c;color:#fdfcfa;font-size:10px;letter-spacing:4px;text-transform:uppercase;padding:6px 16px;margin-bottom:28px;font-family:Inter,sans-serif;\">&#10022; Offerta Fondatori &mdash; Posti Limitati</div>\n  <h2 style=\"font-family:Cormorant Garamond,serif;font-size:clamp(28px,4vw,46px);font-weight:300;color:#1e2a1f;line-height:1.12;margin-bottom:16px;\">Sei pronto a <em style=\"font-style:italic;color:#9b8ec4;\">sentirti vivo</em> sul serio?</h2>\n  <p style=\"font-size:16px;line-height:1.8;color:#7a7068;font-family:Inter,sans-serif;font-weight:300;max-width:520px;margin:0 auto 28px;\">I nostri domos si riempiono settimane in anticipo. Unisciti alla lista d&apos;attesa oggi e assicurati il tuo posto &mdash; con un privilegio esclusivo per chi arriva per primo.</p>\n  <div style=\"display:inline-flex;align-items:center;gap:12px;background:#f5efd6;border:1px solid rgba(201,168,76,.3);padding:14px 28px;margin-bottom:28px;\">\n    <span style=\"font-size:20px;\">&#127873;</span>\n    <div style=\"text-align:left;\"><strong style=\"font-size:16px;color:#b56344;font-family:Inter,sans-serif;\">15% di sconto</strong><span style=\"font-size:14px;color:#3a3530;font-family:Inter,sans-serif;\"> per i primi 20 ospiti &middot; Kit aromatico di benvenuto con elicriso e lavanda di Gallura incluso</span></div>\n  </div>\n  <form style=\"display:flex;max-width:440px;margin:0 auto 14px;\" onsubmit=\"this.querySelector('button').textContent='Sei nella lista!';this.querySelector('button').style.background='#4a6442';event.preventDefault();\">\n    <input type=\"email\" placeholder=\"la-tua@email.com\" required style=\"flex:1;padding:14px 18px;border:1px solid rgba(200,184,154,.6);border-right:none;font-family:Inter,sans-serif;font-size:15px;outline:none;color:#3a3530;background:#fff;\" />\n    <button type=\"submit\" style=\"padding:14px 24px;background:#9b8ec4;border:none;color:#fdfcfa;font-family:Inter,sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;white-space:nowrap;\">Unisciti &rarr;</button>\n  </form>\n  <p style=\"font-size:12px;color:#7a7068;font-family:Inter,sans-serif;\">&#128274; Nessuno spam. Solo disponibilit&agrave;, offerte esclusive e storie di Gallura.</p>\n</div>"
+              }
+            }
+          ]
         }
-      }]
-    }]
+      ]
+    }
+  ],
+  "page_settings": {
+    "template": "elementor_canvas"
   }
-]
+}
