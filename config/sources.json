@@ -1,11 +1,11 @@
 [
   {
     "name": "Blue Flag International",
-    "url": "https://www.blueflag.global/rss.xml",
+    "url": "https://www.blueflag.global/stories-news?format=rss",
     "language": "en",
     "defaultCountry": "Internacional",
-    "verified": false,
-    "note": "Sin feed RSS/Atom público confirmado a 2026-07-03. Se probaron /rss.xml, /feed, /feed/rss, /news?format=rss, /news/feed, /rss, /feed.xml, /index.xml: todas 404/400. Requiere revisión manual del sitio o una fuente alternativa."
+    "verified": true,
+    "note": "Feed real confirmado el 2026-07-03: es un sitio Squarespace, expone RSS agregando ?format=rss a la página de listado (encontrado vía <link rel=\"alternate\"> en el HTML de /stories-news)."
   },
   {
     "name": "Euronews Travel",
