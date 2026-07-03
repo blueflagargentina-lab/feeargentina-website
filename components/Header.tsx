@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import CategoryNav from './CategoryNav';
 import LocaleSwitcher from './LocaleSwitcher';
+import BlueFlagLogo from './BlueFlagLogo';
 import { Locale, getDictionary } from '@/lib/i18n';
 
 export default function Header({ locale }: { locale: Locale }) {
@@ -10,9 +11,7 @@ export default function Header({ locale }: { locale: Locale }) {
       <div className="bg-marine-900 text-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href={`/${locale}`} className="flex items-center gap-2">
-            <span className="text-2xl" aria-hidden>
-              🏳️‍🌊
-            </span>
+            <BlueFlagLogo size={36} className="shrink-0 rounded-md" />
             <span className="flex flex-col leading-tight">
               <span className="text-xl font-bold tracking-tight">{dict.siteName}</span>
               <span className="text-[11px] uppercase tracking-widest text-celeste-300">
