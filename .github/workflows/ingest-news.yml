@@ -25,19 +25,6 @@ jobs:
       - name: Instalar dependencias
         run: npm ci
 
-      - name: "[DIAGNÓSTICO TEMPORAL] Probar stories-news de blueflag.global"
-        run: |
-          URL="https://www.blueflag.global/stories-news/category/Blue+Flag+Sites"
-          UA="Mozilla/5.0 (compatible; BlueFlagNewsBot/1.0; +https://github.com/blueflagargentina-lab/feeargentina-website)"
-          echo "--- HTTP status y content-type ---"
-          curl -s -o /tmp/page.html -w "status=%{http_code} content_type=%{content_type}\n" -A "$UA" "$URL" || true
-          echo "--- Tamaño de la respuesta ---"
-          wc -c /tmp/page.html || true
-          echo "--- Links de feed alternativos (rel=alternate) ---"
-          grep -oiE '<link[^>]*rel=["'"'"']alternate["'"'"'][^>]*>' /tmp/page.html || echo "(ninguno encontrado)"
-          echo "--- Cualquier URL que contenga rss/feed/atom en el HTML ---"
-          grep -oiE 'https?://[^"'"'"' ]*(rss|feed|atom)[^"'"'"' ]*' /tmp/page.html | sort -u || echo "(ninguna encontrada)"
-
       - name: Obtener noticias de las fuentes RSS
         run: npm run ingest:fetch
 
