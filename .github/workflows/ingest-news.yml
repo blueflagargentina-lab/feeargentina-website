@@ -1,0 +1,47 @@
+name: Ingesta automática de noticias Blue Flag
+
+on:
+  schedule:
+    # Cada 6 horas
+    - cron: '0 */6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Obtener noticias de las fuentes RSS
+        run: npm run ingest:fetch
+
+      - name: Reescribir artículos con el LLM editorial
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL || 'claude-sonnet-5' }}
+        run: npm run ingest:generate
+
+      - name: Publicar artículos nuevos
+        run: |
+          git config user.name "marea-azul-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add content/articulos data/seen-urls.json
+          if git diff --cached --quiet; then
+            echo "Sin novedades para publicar."
+          else
+            git commit -m "chore: nuevos artículos Blue Flag generados automáticamente"
+            git push
+          fi

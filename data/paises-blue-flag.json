@@ -1,0 +1,14 @@
+[
+  { "country": "España", "flag": "🇪🇸", "blueFlagSites": 729, "lat": 39.5, "lng": -0.5 },
+  { "country": "Grecia", "flag": "🇬🇷", "blueFlagSites": 675, "lat": 38.0, "lng": 23.9 },
+  { "country": "Turquía", "flag": "🇹🇷", "blueFlagSites": 561, "lat": 36.9, "lng": 30.7 },
+  { "country": "Francia", "flag": "🇫🇷", "blueFlagSites": 428, "lat": 43.3, "lng": 5.4 },
+  { "country": "Italia", "flag": "🇮🇹", "blueFlagSites": 226, "lat": 41.9, "lng": 14.0 },
+  { "country": "Portugal", "flag": "🇵🇹", "blueFlagSites": 375, "lat": 38.7, "lng": -9.4 },
+  { "country": "Países Bajos", "flag": "🇳🇱", "blueFlagSites": 118, "lat": 52.3, "lng": 4.6 },
+  { "country": "Dinamarca", "flag": "🇩🇰", "blueFlagSites": 195, "lat": 55.7, "lng": 10.4 },
+  { "country": "Bulgaria", "flag": "🇧🇬", "blueFlagSites": 21, "lat": 42.7, "lng": 27.7 },
+  { "country": "México", "flag": "🇲🇽", "blueFlagSites": 60, "lat": 20.6, "lng": -87.1 },
+  { "country": "Brasil", "flag": "🇧🇷", "blueFlagSites": 8, "lat": -23.0, "lng": -43.4 },
+  { "country": "Argentina", "flag": "🇦🇷", "blueFlagSites": 5, "lat": -38.0, "lng": -57.5 }
+]
