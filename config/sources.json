@@ -1,26 +1,9 @@
 [
-  {
-    "name": "Blue Flag International",
-    "url": "https://www.blueflag.global/rss.xml",
-    "language": "en",
-    "defaultCountry": "Internacional"
-  },
-  {
-    "name": "Euronews Travel",
-    "url": "https://www.euronews.com/rss?level=theme&name=travel",
-    "language": "en",
-    "defaultCountry": "Europa"
-  },
-  {
-    "name": "UNWTO — Organización Mundial del Turismo",
-    "url": "https://www.unwto.org/rss.xml",
-    "language": "en",
-    "defaultCountry": "Internacional"
-  },
-  {
-    "name": "FEE Argentina — Bandera Azul",
-    "url": "https://www.banderaazul.org.ar/feed",
-    "language": "es",
-    "defaultCountry": "Argentina"
-  }
+  { "name": "probe-blueflag-feed", "url": "https://www.blueflag.global/feed", "language": "en", "defaultCountry": "Internacional" },
+  { "name": "probe-blueflag-feed-rss", "url": "https://www.blueflag.global/feed/rss", "language": "en", "defaultCountry": "Internacional" },
+  { "name": "probe-blueflag-news-rss-query", "url": "https://www.blueflag.global/news?format=rss", "language": "en", "defaultCountry": "Internacional" },
+  { "name": "probe-blueflag-news-feed", "url": "https://www.blueflag.global/news/feed", "language": "en", "defaultCountry": "Internacional" },
+  { "name": "probe-blueflag-rss", "url": "https://www.blueflag.global/rss", "language": "en", "defaultCountry": "Internacional" },
+  { "name": "probe-blueflag-feed-atom", "url": "https://www.blueflag.global/feed.xml", "language": "en", "defaultCountry": "Internacional" },
+  { "name": "probe-blueflag-index-rss", "url": "https://www.blueflag.global/index.xml", "language": "en", "defaultCountry": "Internacional" }
 ]

@@ -20,10 +20,28 @@ function slugifyDate(date) {
   return date.toISOString().slice(0, 10);
 }
 
+const FETCH_TIMEOUT_MS = 15000;
+
+function withTimeout(promise, ms, label) {
+  let timer;
+  const timeout = new Promise((_, reject) => {
+    timer = setTimeout(() => reject(new Error(`Timeout after ${ms}ms fetching ${label}`)), ms);
+  });
+  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+}
+
 async function main() {
   const sources = JSON.parse(fs.readFileSync(SOURCES_PATH, 'utf8'));
   const seenUrls = loadSeenUrls();
-  const parser = new Parser();
+  const parser = new Parser({
+    requestOptions: {
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (compatible; BlueFlagNewsBot/1.0; +https://github.com/blueflagargentina-lab/feeargentina-website)',
+        Accept: 'application/rss+xml, application/xml, text/xml, */*',
+      },
+    },
+  });
 
   fs.mkdirSync(RAW_DIR, { recursive: true });
 
@@ -32,7 +50,7 @@ async function main() {
   for (const source of sources) {
     let feed;
     try {
-      feed = await parser.parseURL(source.url);
+      feed = await withTimeout(parser.parseURL(source.url), FETCH_TIMEOUT_MS, source.url);
     } catch (err) {
       console.error(`No se pudo leer el feed "${source.name}" (${source.url}):`, err.message);
       continue;
