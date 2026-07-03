@@ -4,12 +4,6 @@ export type CategorySlug =
   | 'nuevas-certificaciones'
   | 'sostenibilidad-marina';
 
-export interface CategoryDefinition {
-  slug: CategorySlug;
-  name: string;
-  description: string;
-}
-
 export interface ArticleFrontmatter {
   title: string;
   slug: string;
@@ -32,6 +26,7 @@ export interface Article extends ArticleFrontmatter {
 
 export interface CountryRankingEntry {
   country: string;
+  countryEn: string;
   flag: string;
   blueFlagSites: number;
   lat: number;

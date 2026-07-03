@@ -1,4 +1,3 @@
-import { getCategoryBySlug } from '@/lib/categories';
 import { CategorySlug } from '@/lib/types';
 
 const STYLES: Record<CategorySlug, string> = {
@@ -8,13 +7,12 @@ const STYLES: Record<CategorySlug, string> = {
   'sostenibilidad-marina': 'bg-marine-700 text-white',
 };
 
-export default function CategoryBadge({ category }: { category: CategorySlug }) {
-  const def = getCategoryBySlug(category);
+export default function CategoryBadge({ category, label }: { category: CategorySlug; label: string }) {
   return (
     <span
       className={`inline-block rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wide ${STYLES[category]}`}
     >
-      {def?.name ?? category}
+      {label}
     </span>
   );
 }

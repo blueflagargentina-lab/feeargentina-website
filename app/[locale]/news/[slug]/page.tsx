@@ -8,15 +8,19 @@ import ShareButtons from '@/components/ShareButtons';
 import ArticleGrid from '@/components/ArticleGrid';
 import Sidebar from '@/components/Sidebar';
 import { getAllArticles, getArticleBySlug, getRelatedArticles } from '@/lib/articles';
+import { locales, isLocale, getDictionary, dateLocale, Locale } from '@/lib/i18n';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mareazul.news';
 
 export function generateStaticParams() {
-  return getAllArticles().map((a) => ({ slug: a.slug }));
+  return locales.flatMap((locale) =>
+    getAllArticles(locale).map((article) => ({ locale, slug: article.slug }))
+  );
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const article = getArticleBySlug(params.slug);
+export function generateMetadata({ params }: { params: { locale: string; slug: string } }) {
+  if (!isLocale(params.locale)) return {};
+  const article = getArticleBySlug(params.locale, params.slug);
   if (!article) return {};
   return {
     title: article.title,
@@ -29,28 +33,33 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString('es-AR', {
+function formatDate(iso: string, locale: Locale) {
+  return new Date(iso).toLocaleDateString(dateLocale(locale), {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
   });
 }
 
-export default function ArticlePage({ params }: { params: { slug: string } }) {
-  const article = getArticleBySlug(params.slug);
+export default function ArticlePage({ params }: { params: { locale: string; slug: string } }) {
+  if (!isLocale(params.locale)) notFound();
+  const locale: Locale = params.locale;
+  const dict = getDictionary(locale);
+
+  const article = getArticleBySlug(locale, params.slug);
   if (!article) notFound();
 
-  const related = getRelatedArticles(article);
-  const articleUrl = `${SITE_URL}/noticias/${article.slug}`;
+  const related = getRelatedArticles(locale, article);
+  const articleUrl = `${SITE_URL}/${locale}/news/${article.slug}`;
+  const categoryText = dict.categories[article.category];
 
   return (
     <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
       <article>
         <div className="mb-4 flex items-center gap-3">
-          <CategoryBadge category={article.category} />
+          <CategoryBadge category={article.category} label={categoryText.name} />
           <time className="text-sm text-marine-500" dateTime={article.date}>
-            {formatDate(article.date)}
+            {formatDate(article.date, locale)}
           </time>
           <span className="text-sm text-marine-500">📍 {article.country}</span>
         </div>
@@ -65,7 +74,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="mb-6">
-          <ShareButtons title={article.title} url={articleUrl} />
+          <ShareButtons title={article.title} url={articleUrl} dict={dict.share} />
         </div>
 
         <div className="prose-article">
@@ -73,8 +82,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="mt-8 rounded-lg border border-marine-900/10 bg-celeste-200/30 p-4 text-sm text-marine-700">
-          Nota elaborada por la redacción de Marea Azul a partir de fuentes internacionales. Fuente
-          original:{' '}
+          {dict.article.editorialNotePrefix}{' '}
           <a
             href={article.sourceUrl}
             target="_blank"
@@ -87,23 +95,23 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="mt-6">
-          <ShareButtons title={article.title} url={articleUrl} />
+          <ShareButtons title={article.title} url={articleUrl} dict={dict.share} />
         </div>
 
         {related.length > 0 && (
           <section className="mt-12">
-            <h2 className="mb-4 text-xl font-bold text-marine-900">Noticias relacionadas</h2>
-            <ArticleGrid articles={related} />
+            <h2 className="mb-4 text-xl font-bold text-marine-900">{dict.article.relatedNews}</h2>
+            <ArticleGrid articles={related} locale={locale} />
           </section>
         )}
 
         <p className="mt-8 text-sm">
-          <Link href="/" className="text-marine-500 hover:text-marine-700">
-            ← Volver a la portada
+          <Link href={`/${locale}`} className="text-marine-500 hover:text-marine-700">
+            {dict.article.backToHome}
           </Link>
         </p>
       </article>
-      <Sidebar />
+      <Sidebar locale={locale} />
     </div>
   );
 }
