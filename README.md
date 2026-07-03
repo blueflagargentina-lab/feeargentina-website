@@ -1,4 +1,4 @@
-# Marea Azul / Blue Tide — Portal de noticias automatizado sobre Blue Flag (Bandera Azul)
+# Blue Flag News — Portal de noticias automatizado sobre Blue Flag (Bandera Azul)
 
 Portal editorial **bilingüe (español / inglés)** que recopila, traduce, resume y publica noticias
 internacionales sobre el programa de certificación ecológica **Blue Flag**: playas, marinas,
@@ -8,8 +8,9 @@ país (ver `content/*.md` y la página `/es/about` / `/en/about`).
 
 ## Idiomas
 
-El sitio vive bajo rutas con prefijo de idioma: `/es/...` (español, contenido "Marea Azul") y
-`/en/...` (inglés, contenido "Blue Tide"). La raíz `/` redirige a `/es` vía `middleware.ts`, que
+El sitio vive bajo rutas con prefijo de idioma: `/es/...` (español) y `/en/...` (inglés), ambas
+bajo la misma marca "Blue Flag News" (`components/BlueFlagLogo.tsx`). La raíz `/` redirige a `/es`
+vía `middleware.ts`, que
 también redirige las rutas legacy sin prefijo de idioma (`/categorias/*`, `/noticias/*`,
 `/acerca-de`) a sus equivalentes en `/es`. El selector ES/EN vive en el header
 (`components/LocaleSwitcher.tsx`) y conserva la página actual al cambiar de idioma.
@@ -112,6 +113,6 @@ Ver `.env.example`. Como mínimo, para correr el pipeline de generación se nece
 
 El programa Blue Flag es administrado internacionalmente por la **Fundación para la Educación
 Ambiental (FEE)** y, en Argentina, por **FEE Argentina** bajo el nombre Bandera Azul
-([banderaazul.org.ar](http://www.banderaazul.org.ar)). Marea Azul / Blue Tide es un proyecto
-editorial que sigue la actualidad de ese programa; el contenido institucional original de FEE
-Argentina se conserva en `content/*.md` (español) y `content/*.en.md` (inglés).
+([banderaazul.org.ar](http://www.banderaazul.org.ar)). Blue Flag News es un proyecto editorial que
+sigue la actualidad de ese programa; el contenido institucional original de FEE Argentina se
+conserva en `content/*.md` (español) y `content/*.en.md` (inglés).

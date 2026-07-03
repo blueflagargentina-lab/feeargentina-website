@@ -84,7 +84,7 @@ export interface Dictionary {
 }
 
 const es: Dictionary = {
-  siteName: 'Marea Azul',
+  siteName: 'Blue Flag News',
   tagline: 'Noticias del programa Blue Flag',
   siteDescription:
     'Portal de noticias en español sobre playas, marinas y proyectos de sostenibilidad certificados con la Bandera Azul (Blue Flag) en todo el mundo.',
@@ -116,7 +116,7 @@ const es: Dictionary = {
   article: {
     source: 'Fuente',
     editorialNotePrefix:
-      'Nota elaborada por la redacción de Marea Azul a partir de fuentes internacionales. Fuente original:',
+      'Nota elaborada por la redacción de Blue Flag News a partir de fuentes internacionales. Fuente original:',
     relatedNews: 'Noticias relacionadas',
     backToHome: '← Volver a la portada',
   },
@@ -147,13 +147,13 @@ const es: Dictionary = {
     banderaAzulLink: 'Bandera Azul Argentina',
     blueFlagIntlLink: 'Blue Flag International',
     copyrightNote:
-      'Marea Azul News · Contenido generado y curado automáticamente a partir de fuentes internacionales, con enlace a la nota original en cada artículo.',
+      'Blue Flag News · Contenido generado y curado automáticamente a partir de fuentes internacionales, con enlace a la nota original en cada artículo.',
   },
   categoryPage: { empty: 'Todavía no hay artículos publicados en esta sección.' },
   about: {
-    title: 'Acerca de Marea Azul',
+    title: 'Acerca de Blue Flag News',
     intro:
-      'Marea Azul es un portal editorial que recopila, traduce y resume en español la actualidad internacional sobre el programa de certificación ecológica Blue Flag (Bandera Azul): nuevas playas y marinas certificadas, criterios de calidad de agua y gestión ambiental, y proyectos de sostenibilidad costera.',
+      'Blue Flag News es un portal editorial que recopila, traduce y resume en español la actualidad internacional sobre el programa de certificación ecológica Blue Flag (Bandera Azul): nuevas playas y marinas certificadas, criterios de calidad de agua y gestión ambiental, y proyectos de sostenibilidad costera.',
     howHeading: 'Cómo se produce el contenido',
     how: [
       'Un proceso automatizado consulta fuentes RSS de agencias internacionales, ministerios de turismo y medios especializados (por ejemplo, Blue Flag International y Euronews Travel).',
@@ -163,13 +163,13 @@ const es: Dictionary = {
     ],
     linkHeading: 'Vínculo con FEE Argentina',
     linkBody:
-      'El programa Blue Flag es administrado internacionalmente por la Fundación para la Educación Ambiental (FEE) y, en Argentina, por FEE Argentina bajo el nombre Bandera Azul. Marea Azul es un proyecto editorial independiente que sigue de cerca la actualidad de ese programa.',
+      'El programa Blue Flag es administrado internacionalmente por la Fundación para la Educación Ambiental (FEE) y, en Argentina, por FEE Argentina bajo el nombre Bandera Azul. Blue Flag News es un proyecto editorial independiente que sigue de cerca la actualidad de ese programa.',
   },
   localeSwitcher: { es: 'ES', en: 'EN' },
 };
 
 const en: Dictionary = {
-  siteName: 'Blue Tide',
+  siteName: 'Blue Flag News',
   tagline: 'News from the Blue Flag programme',
   siteDescription:
     'English-language news portal covering beaches, marinas and sustainability projects certified with the Blue Flag eco-label worldwide.',
@@ -201,7 +201,7 @@ const en: Dictionary = {
   article: {
     source: 'Source',
     editorialNotePrefix:
-      'Story compiled by the Blue Tide editorial team from international sources. Original source:',
+      'Story compiled by the Blue Flag News editorial team from international sources. Original source:',
     relatedNews: 'Related news',
     backToHome: '← Back to homepage',
   },
@@ -231,13 +231,13 @@ const en: Dictionary = {
     banderaAzulLink: 'Blue Flag Argentina',
     blueFlagIntlLink: 'Blue Flag International',
     copyrightNote:
-      'Blue Tide News · Content automatically generated and curated from international sources, with a link to the original story in every article.',
+      'Blue Flag News · Content automatically generated and curated from international sources, with a link to the original story in every article.',
   },
   categoryPage: { empty: 'No articles have been published in this section yet.' },
   about: {
-    title: 'About Blue Tide',
+    title: 'About Blue Flag News',
     intro:
-      'Blue Tide is an editorial portal that gathers, translates and summarizes international coverage of the Blue Flag eco-certification programme: newly certified beaches and marinas, water quality and environmental management criteria, and coastal sustainability projects.',
+      'Blue Flag News is an editorial portal that gathers, translates and summarizes international coverage of the Blue Flag eco-certification programme: newly certified beaches and marinas, water quality and environmental management criteria, and coastal sustainability projects.',
     howHeading: 'How the content is produced',
     how: [
       'An automated process monitors RSS feeds from international agencies, tourism ministries and specialized outlets (for example, Blue Flag International and Euronews Travel).',
@@ -247,7 +247,7 @@ const en: Dictionary = {
     ],
     linkHeading: 'Connection to FEE Argentina',
     linkBody:
-      'The Blue Flag programme is run internationally by the Foundation for Environmental Education (FEE) and, in Argentina, by FEE Argentina under the name Bandera Azul. Blue Tide is an independent editorial project that closely follows that programme.',
+      'The Blue Flag programme is run internationally by the Foundation for Environmental Education (FEE) and, in Argentina, by FEE Argentina under the name Bandera Azul. Blue Flag News is an independent editorial project that closely follows that programme.',
   },
   localeSwitcher: { es: 'ES', en: 'EN' },
 };

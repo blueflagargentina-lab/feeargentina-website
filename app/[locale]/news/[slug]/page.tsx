@@ -10,7 +10,7 @@ import Sidebar from '@/components/Sidebar';
 import { getAllArticles, getArticleBySlug, getRelatedArticles } from '@/lib/articles';
 import { locales, isLocale, getDictionary, dateLocale, Locale } from '@/lib/i18n';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mareazul.news';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://blueflagnews.example';
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>

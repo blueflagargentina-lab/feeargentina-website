@@ -5,7 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { locales, isLocale, getDictionary, Locale } from '@/lib/i18n';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://mareazul.news';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://blueflagnews.example';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
