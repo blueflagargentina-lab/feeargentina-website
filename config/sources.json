@@ -3,24 +3,32 @@
     "name": "Blue Flag International",
     "url": "https://www.blueflag.global/rss.xml",
     "language": "en",
-    "defaultCountry": "Internacional"
+    "defaultCountry": "Internacional",
+    "verified": false,
+    "note": "Sin feed RSS/Atom público confirmado a 2026-07-03. Se probaron /rss.xml, /feed, /feed/rss, /news?format=rss, /news/feed, /rss, /feed.xml, /index.xml: todas 404/400. Requiere revisión manual del sitio o una fuente alternativa."
   },
   {
     "name": "Euronews Travel",
     "url": "https://www.euronews.com/rss?level=theme&name=travel",
     "language": "en",
-    "defaultCountry": "Europa"
+    "defaultCountry": "Europa",
+    "verified": false,
+    "note": "Devolvió 404 en la última prueba (2026-07-03). Verificar la URL real del feed de la sección Travel."
   },
   {
     "name": "UNWTO — Organización Mundial del Turismo",
     "url": "https://www.unwto.org/rss.xml",
     "language": "en",
-    "defaultCountry": "Internacional"
+    "defaultCountry": "Internacional",
+    "verified": false,
+    "note": "Devolvió 403 en la última prueba (2026-07-03), posible bloqueo de bots."
   },
   {
     "name": "FEE Argentina — Bandera Azul",
     "url": "https://www.banderaazul.org.ar/feed",
     "language": "es",
-    "defaultCountry": "Argentina"
+    "defaultCountry": "Argentina",
+    "verified": false,
+    "note": "Devolvió 404 en la última prueba (2026-07-03). Verificar si el CMS del sitio expone feed."
   }
 ]
