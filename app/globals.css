@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-foam text-marine-900;
+}
+
+.prose-article :where(h2, h3) {
+  @apply mt-8 mb-3 font-bold text-marine-900;
+}
+
+.prose-article h2 {
+  @apply text-2xl;
+}
+
+.prose-article h3 {
+  @apply text-xl;
+}
+
+.prose-article p {
+  @apply mb-4 leading-relaxed text-marine-800;
+}
+
+.prose-article a {
+  @apply text-marine-500 underline hover:text-marine-600;
+}
+
+.prose-article ul,
+.prose-article ol {
+  @apply mb-4 ml-6 list-disc space-y-1 text-marine-800;
+}
+
+.prose-article blockquote {
+  @apply border-l-4 border-celeste-400 bg-celeste-200/40 py-2 pl-4 italic text-marine-700;
+}

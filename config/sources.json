@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Blue Flag International",
+    "url": "https://www.blueflag.global/rss.xml",
+    "language": "en",
+    "defaultCountry": "Internacional"
+  },
+  {
+    "name": "Euronews Travel",
+    "url": "https://www.euronews.com/rss?level=theme&name=travel",
+    "language": "en",
+    "defaultCountry": "Europa"
+  },
+  {
+    "name": "UNWTO — Organización Mundial del Turismo",
+    "url": "https://www.unwto.org/rss.xml",
+    "language": "en",
+    "defaultCountry": "Internacional"
+  },
+  {
+    "name": "FEE Argentina — Bandera Azul",
+    "url": "https://www.banderaazul.org.ar/feed",
+    "language": "es",
+    "defaultCountry": "Argentina"
+  }
+]

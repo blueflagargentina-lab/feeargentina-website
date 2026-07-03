@@ -1,0 +1,37 @@
+{
+  "name": "marea-azul-news",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portal de noticias automatizado sobre el programa de certificación ecológica Blue Flag (Bandera Azul).",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "ingest:fetch": "node scripts/fetch-sources.mjs",
+    "ingest:generate": "node scripts/generate-articles.mjs",
+    "ingest:all": "npm run ingest:fetch && npm run ingest:generate"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
+    "gray-matter": "^4.0.3",
+    "leaflet": "^1.9.4",
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-leaflet": "^4.2.1",
+    "react-markdown": "^9.0.1",
+    "remark-gfm": "^4.0.0",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.12",
+    "@types/node": "^20.14.15",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.3"
+  }
+}
