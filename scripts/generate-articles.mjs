@@ -5,7 +5,8 @@ import { buildSystemPrompt, buildUserPrompt } from './lib/prompt.mjs';
 
 const ROOT = path.resolve(new URL('.', import.meta.url).pathname, '..');
 const RAW_DIR = path.join(ROOT, 'data', 'raw');
-const ARTICLES_DIR = path.join(ROOT, 'content', 'articulos');
+const ARTICLES_ROOT = path.join(ROOT, 'content', 'articulos');
+const LOCALES = ['es', 'en'];
 
 const VALID_CATEGORIES = [
   'playas-destacadas',
@@ -44,11 +45,11 @@ function extractJson(rawText) {
   return JSON.parse(cleaned);
 }
 
-async function rewriteWithLlm(client, item, currentYear) {
+async function rewriteWithLlm(client, item, currentYear, locale) {
   const response = await client.messages.create({
     model: MODEL,
     max_tokens: 2000,
-    system: buildSystemPrompt(currentYear),
+    system: buildSystemPrompt(currentYear, locale),
     messages: [{ role: 'user', content: buildUserPrompt(item) }],
   });
 
@@ -58,18 +59,20 @@ async function rewriteWithLlm(client, item, currentYear) {
 
 async function main() {
   if (!process.env.ANTHROPIC_API_KEY) {
-    console.error('Falta ANTHROPIC_API_KEY en el entorno. Abortando.');
+    console.error('Missing ANTHROPIC_API_KEY in the environment. Aborting.');
     process.exit(1);
   }
 
   if (!fs.existsSync(RAW_DIR)) {
-    console.log('No hay data/raw/. Ejecutá primero "npm run ingest:fetch".');
+    console.log('No data/raw/ found. Run "npm run ingest:fetch" first.');
     return;
   }
 
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
   const currentYear = new Date().getFullYear();
-  fs.mkdirSync(ARTICLES_DIR, { recursive: true });
+  for (const locale of LOCALES) {
+    fs.mkdirSync(path.join(ARTICLES_ROOT, locale), { recursive: true });
+  }
 
   const rawFiles = fs.readdirSync(RAW_DIR).filter((f) => f.endsWith('.json'));
   let generated = 0;
@@ -80,35 +83,49 @@ async function main() {
     const failedItems = [];
 
     for (const item of items) {
-      try {
-        const result = await rewriteWithLlm(client, item, currentYear);
-        const category = VALID_CATEGORIES.includes(result.category)
-          ? result.category
-          : 'sostenibilidad-marina';
-        const slug = `${slugify(result.title)}-${currentYear}`;
-        const today = new Date().toISOString().slice(0, 10);
+      // Shared slug across locales, derived once from the original title, so
+      // /es/news/<slug> and /en/news/<slug> both point at the same story.
+      const sharedSlug = `${slugify(item.title)}-${currentYear}`;
+      const today = new Date().toISOString().slice(0, 10);
+      let itemFailed = false;
 
-        const frontmatter = toFrontmatterYaml({
-          title: result.title,
-          slug,
-          date: today,
-          category,
-          excerpt: result.excerpt,
-          seoDescription: result.seoDescription,
-          cover: `https://picsum.photos/seed/${slug}/1200/800`,
-          coverAlt: result.coverAlt,
-          country: result.country || item.defaultCountry,
-          tags: result.tags || [],
-          sourceName: item.sourceName,
-          sourceUrl: item.link,
-        });
+      for (const locale of LOCALES) {
+        try {
+          const result = await rewriteWithLlm(client, item, currentYear, locale);
+          const category = VALID_CATEGORIES.includes(result.category)
+            ? result.category
+            : 'sostenibilidad-marina';
 
-        fs.writeFileSync(path.join(ARTICLES_DIR, `${slug}.md`), frontmatter + result.body + '\n');
-        generated += 1;
-        console.log(`✓ Generado: ${slug}.md`);
-      } catch (err) {
-        console.error(`✗ Falló la reescritura de "${item.title}":`, err.message);
+          const frontmatter = toFrontmatterYaml({
+            title: result.title,
+            slug: sharedSlug,
+            date: today,
+            category,
+            excerpt: result.excerpt,
+            seoDescription: result.seoDescription,
+            cover: `https://picsum.photos/seed/${sharedSlug}/1200/800`,
+            coverAlt: result.coverAlt,
+            country: result.country || item.defaultCountry,
+            tags: result.tags || [],
+            sourceName: item.sourceName,
+            sourceUrl: item.link,
+          });
+
+          fs.writeFileSync(
+            path.join(ARTICLES_ROOT, locale, `${sharedSlug}.md`),
+            frontmatter + result.body + '\n'
+          );
+          console.log(`✓ Generated (${locale}): ${sharedSlug}.md`);
+        } catch (err) {
+          console.error(`✗ Failed to rewrite "${item.title}" (${locale}):`, err.message);
+          itemFailed = true;
+        }
+      }
+
+      if (itemFailed) {
         failedItems.push(item);
+      } else {
+        generated += 1;
       }
     }
 
@@ -119,7 +136,7 @@ async function main() {
     }
   }
 
-  console.log(`Listo. ${generated} artículos nuevos en content/articulos/.`);
+  console.log(`Done. ${generated} new stories published in both languages.`);
 }
 
 main().catch((err) => {

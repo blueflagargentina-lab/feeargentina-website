@@ -1,5 +1,6 @@
 import countriesData from '@/data/paises-blue-flag.json';
 import { CountryRankingEntry } from './types';
+import { Locale } from './i18n';
 
 export function getCountryRanking(): CountryRankingEntry[] {
   return [...(countriesData as CountryRankingEntry[])].sort(
@@ -13,4 +14,8 @@ export function getTopCountries(limit = 8): CountryRankingEntry[] {
 
 export function getMapPoints(): CountryRankingEntry[] {
   return countriesData as CountryRankingEntry[];
+}
+
+export function getCountryName(entry: CountryRankingEntry, locale: Locale): string {
+  return locale === 'en' ? entry.countryEn : entry.country;
 }

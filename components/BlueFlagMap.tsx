@@ -4,9 +4,15 @@ import { useEffect } from 'react';
 import { MapContainer, TileLayer, CircleMarker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { getMapPoints } from '@/lib/countries';
+import { getMapPoints, getCountryName } from '@/lib/countries';
+import { Locale } from '@/lib/i18n';
 
-export default function BlueFlagMap() {
+const SITES_LABEL: Record<Locale, string> = {
+  es: 'sitios con certificación Blue Flag',
+  en: 'Blue Flag certified sites',
+};
+
+export default function BlueFlagMap({ locale }: { locale: Locale }) {
   const points = getMapPoints();
 
   useEffect(() => {
@@ -38,9 +44,9 @@ export default function BlueFlagMap() {
           pathOptions={{ color: '#136189', fillColor: '#4FB8E8', fillOpacity: 0.8 }}
         >
           <Popup>
-            {point.flag} <strong>{point.country}</strong>
+            {point.flag} <strong>{getCountryName(point, locale)}</strong>
             <br />
-            {point.blueFlagSites} sitios con certificación Blue Flag
+            {point.blueFlagSites} {SITES_LABEL[locale]}
           </Popup>
         </CircleMarker>
       ))}

@@ -1,14 +1,14 @@
-import { getTopCountries } from '@/lib/countries';
+import { getTopCountries, getCountryName } from '@/lib/countries';
+import { Locale, getDictionary } from '@/lib/i18n';
 
-export default function CountryRanking() {
+export default function CountryRanking({ locale }: { locale: Locale }) {
+  const dict = getDictionary(locale).sidebar;
   const countries = getTopCountries(8);
   const max = countries[0]?.blueFlagSites ?? 1;
 
   return (
     <div className="rounded-xl bg-white p-5 shadow-card ring-1 ring-marine-900/5">
-      <h3 className="text-base font-bold text-marine-900">
-        🏆 Países con más galardones Blue Flag
-      </h3>
+      <h3 className="text-base font-bold text-marine-900">{dict.rankingTitle}</h3>
       <ol className="mt-4 space-y-3">
         {countries.map((c, i) => (
           <li key={c.country} className="flex items-center gap-3">
@@ -18,7 +18,7 @@ export default function CountryRanking() {
             </span>
             <div className="flex-1">
               <div className="flex items-center justify-between text-sm">
-                <span className="font-medium text-marine-800">{c.country}</span>
+                <span className="font-medium text-marine-800">{getCountryName(c, locale)}</span>
                 <span className="text-marine-500">{c.blueFlagSites}</span>
               </div>
               <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-celeste-200">
@@ -31,9 +31,7 @@ export default function CountryRanking() {
           </li>
         ))}
       </ol>
-      <p className="mt-3 text-[11px] text-marine-500">
-        Cifras de referencia de sitios galardonados Blue Flag, actualizadas para la temporada 2026.
-      </p>
+      <p className="mt-3 text-[11px] text-marine-500">{dict.rankingCaption}</p>
     </div>
   );
 }

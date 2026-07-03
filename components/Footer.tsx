@@ -1,56 +1,57 @@
 import Link from 'next/link';
-import { CATEGORIES } from '@/lib/categories';
+import { CATEGORY_SLUGS } from '@/lib/categories';
+import { Locale, getDictionary } from '@/lib/i18n';
 
 const currentYear = new Date().getFullYear();
 
-export default function Footer() {
+export default function Footer({ locale }: { locale: Locale }) {
+  const dict = getDictionary(locale);
   return (
     <footer className="mt-16 bg-marine-900 text-celeste-100">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-3">
         <div>
-          <h4 className="text-lg font-bold text-white">Marea Azul</h4>
-          <p className="mt-2 text-sm text-celeste-300">
-            Portal de noticias automatizado que traduce, resume y publica en español la actualidad
-            internacional del programa Blue Flag (Bandera Azul) de la Fundación para la Educación
-            Ambiental (FEE).
-          </p>
+          <h4 className="text-lg font-bold text-white">{dict.siteName}</h4>
+          <p className="mt-2 text-sm text-celeste-300">{dict.footer.description}</p>
         </div>
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-white">Secciones</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-wide text-white">
+            {dict.footer.sectionsHeading}
+          </h4>
           <ul className="mt-3 space-y-2 text-sm">
-            {CATEGORIES.map((c) => (
-              <li key={c.slug}>
-                <Link href={`/categorias/${c.slug}`} className="hover:text-white">
-                  {c.name}
+            {CATEGORY_SLUGS.map((slug) => (
+              <li key={slug}>
+                <Link href={`/${locale}/category/${slug}`} className="hover:text-white">
+                  {dict.categories[slug].name}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-white">Sitio</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-wide text-white">
+            {dict.footer.siteHeading}
+          </h4>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
-              <Link href="/acerca-de" className="hover:text-white">
-                Acerca de / FEE Argentina
+              <Link href={`/${locale}/about`} className="hover:text-white">
+                {dict.footer.aboutLink}
               </Link>
             </li>
             <li>
               <a href="https://www.banderaazul.org.ar" target="_blank" rel="noreferrer" className="hover:text-white">
-                Bandera Azul Argentina
+                {dict.footer.banderaAzulLink}
               </a>
             </li>
             <li>
               <a href="https://www.blueflag.global" target="_blank" rel="noreferrer" className="hover:text-white">
-                Blue Flag International
+                {dict.footer.blueFlagIntlLink}
               </a>
             </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-marine-700 px-4 py-4 text-center text-xs text-celeste-400">
-        © {currentYear} Marea Azul News · Contenido generado y curado automáticamente a partir de fuentes
-        internacionales, con enlace a la nota original en cada artículo.
+        © {currentYear} {dict.footer.copyrightNote}
       </div>
     </footer>
   );

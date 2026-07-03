@@ -1,17 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Article } from '@/lib/types';
+import { Locale, getDictionary, dateLocale } from '@/lib/i18n';
 import CategoryBadge from './CategoryBadge';
 
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString('es-AR', {
+function formatDate(iso: string, locale: Locale) {
+  return new Date(iso).toLocaleDateString(dateLocale(locale), {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
   });
 }
 
-export default function Hero({ article }: { article: Article }) {
+export default function Hero({ article, locale }: { article: Article; locale: Locale }) {
+  const dict = getDictionary(locale);
+  const categoryText = dict.categories[article.category];
+
   return (
     <section className="relative overflow-hidden rounded-2xl bg-marine-900 text-white shadow-card">
       <div className="relative aspect-[16/9] w-full sm:aspect-[21/9]">
@@ -27,20 +31,20 @@ export default function Hero({ article }: { article: Article }) {
       </div>
       <div className="absolute inset-x-0 bottom-0 flex flex-col gap-3 p-6 sm:p-10">
         <div className="flex items-center gap-3">
-          <CategoryBadge category={article.category} />
+          <CategoryBadge category={article.category} label={categoryText.name} />
           <time className="text-sm text-celeste-200" dateTime={article.date}>
-            {formatDate(article.date)}
+            {formatDate(article.date, locale)}
           </time>
         </div>
         <h1 className="max-w-3xl text-2xl font-extrabold leading-tight sm:text-4xl">
-          <Link href={`/noticias/${article.slug}`}>{article.title}</Link>
+          <Link href={`/${locale}/news/${article.slug}`}>{article.title}</Link>
         </h1>
         <p className="max-w-2xl text-sm text-celeste-100 sm:text-base">{article.excerpt}</p>
         <Link
-          href={`/noticias/${article.slug}`}
+          href={`/${locale}/news/${article.slug}`}
           className="mt-2 inline-block w-fit rounded-full bg-eco-500 px-5 py-2 text-sm font-semibold transition hover:bg-eco-600"
         >
-          Leer nota completa
+          {dict.hero.readFullStory}
         </Link>
       </div>
     </section>
