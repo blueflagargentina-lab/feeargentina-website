@@ -84,7 +84,9 @@ async function main() {
   console.log(`Listo. ${totalNew} noticias nuevas guardadas en data/raw/.`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
