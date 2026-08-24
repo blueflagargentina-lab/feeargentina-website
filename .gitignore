@@ -28,6 +28,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# python
+__pycache__/
+*.pyc
+
 # pipeline scratch data (data/seen-urls.json se commitea a propósito:
 # el workflow programado clona el repo de cero en cada corrida, así que
 # necesita persistir en git para que la deduplicación funcione entre corridas)
