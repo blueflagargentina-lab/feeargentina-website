@@ -1,0 +1,15 @@
+[project]
+name = "medio-noticias-ia"
+version = "0.1.0"
+description = "Sistema multiagente (Detector, Redactor, Verificador) para Blue Flag News"
+requires-python = ">=3.11"
+dependencies = [
+    "anthropic>=0.69",
+    "httpx>=0.27",
+    "feedparser>=6.0",
+    "pydantic>=2.7",
+    "python-dotenv>=1.0",
+]
+
+[tool.uv]
+package = false

@@ -1,78 +1,89 @@
-"""Orquestador del pipeline editorial de Blue Flag News: Detector -> Redactor -> Verificador."""
+"""Orquestador del pipeline: Detector -> Redactor -> Verificador -> salida/.
 
-import json
-from pathlib import Path
+Uso:
+    uv run python -m src.main
+"""
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-FUENTES_PATH = BASE_DIR / "fuentes" / "rss_list.json"
-SEEN_URLS_PATH = BASE_DIR / "src" / "seen_urls.json"
+import asyncio
+import logging
+import re
+import unicodedata
+from datetime import datetime, timezone
 
+import anthropic
 
-def cargar_fuentes() -> list[dict]:
-    with open(FUENTES_PATH, encoding="utf-8") as f:
-        return json.load(f)
+from . import detector, redactor, verificador
+from .config import ANTHROPIC_TIMEOUT_SECONDS, SALIDA_DIR
+from .models import NoticiaCruda, NotaEstructurada
 
-
-def cargar_urls_vistas() -> set[str]:
-    if not SEEN_URLS_PATH.exists():
-        return set()
-    with open(SEEN_URLS_PATH, encoding="utf-8") as f:
-        return set(json.load(f))
-
-
-def guardar_urls_vistas(urls: set[str]) -> None:
-    with open(SEEN_URLS_PATH, "w", encoding="utf-8") as f:
-        json.dump(sorted(urls), f, ensure_ascii=False, indent=2)
+logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
+logger = logging.getLogger(__name__)
 
 
-def detectar(fuentes: list[dict], urls_vistas: set[str]) -> list[dict]:
-    """Agente Detector: monitorea las fuentes y devuelve ítems nuevos.
-
-    TODO: reemplazar por el fetch real de cada feed RSS/Atom (ver
-    agentes/detector.skill.md).
-    """
-    return []
+def _slugify(texto: str) -> str:
+    texto = unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode("ascii")
+    texto = re.sub(r"[^a-zA-Z0-9]+", "-", texto).strip("-").lower()
+    return texto or "nota"
 
 
-def redactar(item: dict) -> dict:
-    """Agente Redactor: reescribe el ítem en un artículo original (es/en).
+def _guardar_nota(nota: NotaEstructurada, noticia: NoticiaCruda) -> None:
+    SALIDA_DIR.mkdir(parents=True, exist_ok=True)
+    ahora = datetime.now(timezone.utc)
+    slug = _slugify(nota.titulo)
+    ruta = SALIDA_DIR / f"{ahora:%Y-%m-%d}-{slug}.md"
 
-    TODO: integrar el modelo de lenguaje siguiendo manual_estilo.md y
-    agentes/redactor.skill.md.
-    """
-    raise NotImplementedError
+    vinetas_md = "\n".join(f"- {v}" for v in nota.vinetas)
+    contenido = f"""---
+title: "{nota.titulo}"
+sourceName: "{noticia.source_name}"
+sourceUrl: "{noticia.link}"
+publishedAt: "{ahora.isoformat()}"
+---
 
+{nota.entrada}
 
-def verificar(articulo: dict) -> bool:
-    """Agente Verificador: valida el artículo contra el checklist editorial.
+{nota.cuerpo}
 
-    TODO: implementar el checklist de agentes/verificador.skill.md.
-    """
-    raise NotImplementedError
+## Puntos clave
+
+{vinetas_md}
+"""
+    ruta.write_text(contenido, encoding="utf-8")
+    logger.info("Publicado: %s", ruta.name)
 
 
 def main() -> None:
-    fuentes = cargar_fuentes()
-    urls_vistas = cargar_urls_vistas()
+    fuentes = detector.cargar_fuentes()
+    urls_vistas = detector.cargar_urls_vistas()
 
-    items_nuevos = detectar(fuentes, urls_vistas)
-    print(f"Detector: {len(items_nuevos)} ítem(s) nuevo(s) encontrados.")
+    primicias = asyncio.run(detector.detectar(fuentes, urls_vistas))
+    logger.info("Detector: %d primicia(s) nueva(s) encontrada(s).", len(primicias))
 
-    for item in items_nuevos:
-        try:
-            articulo = redactar(item)
-        except NotImplementedError:
-            print("Redactor no implementado aún.")
-            break
+    if not primicias:
+        return
 
-        if verificar(articulo):
-            print(f"Publicado: {articulo.get('title')}")
+    client = anthropic.Anthropic(timeout=ANTHROPIC_TIMEOUT_SECONDS)
+
+    for noticia in primicias:
+        # Se marca como vista aunque falle la redacción o la verificación,
+        # para no reintentar la misma URL en cada corrida.
+        urls_vistas.add(noticia.link)
+
+        nota = redactor.redactar(client, noticia)
+        if nota is None:
+            continue
+
+        resultado = verificador.verificar(nota, noticia)
+        if resultado.aprobado:
+            _guardar_nota(nota, noticia)
         else:
-            print(f"Rechazado por el Verificador: {item.get('title')}")
+            logger.warning(
+                "Rechazado por el Verificador ('%s'): %s",
+                noticia.title,
+                "; ".join(resultado.motivos),
+            )
 
-        urls_vistas.add(item["link"])
-
-    guardar_urls_vistas(urls_vistas)
+    detector.guardar_urls_vistas(urls_vistas)
 
 
 if __name__ == "__main__":

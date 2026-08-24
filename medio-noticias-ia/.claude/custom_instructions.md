@@ -18,12 +18,24 @@ ecológica Blue Flag. Complementa (no reemplaza) el pipeline existente en
 
 ## Convenciones
 
-- Idiomas de salida: español (`es`) e inglés (`en`), con el mismo `slug` en ambos.
-- Formato de artículo: Markdown con frontmatter (título, categoría, excerpt, SEO,
-  país, tags, fuente).
-- Categorías válidas: `playas-destacadas`, `marinas-y-embarcaciones`,
-  `nuevas-certificaciones`, `sostenibilidad-marina`.
+- Idioma de salida: español.
+- Formato de nota: Markdown con frontmatter (título, fuente, URL, fecha) y cuerpo
+  con título, entrada (lede), cuerpo en 3-5 párrafos y exactamente 3 viñetas clave.
+- Gestión de dependencias con `uv` (`pyproject.toml` en este directorio).
+- Todo el código de red del Detector es asíncrono (`httpx.AsyncClient` +
+  `asyncio.gather`) y aísla los errores por fuente: una fuente caída no debe
+  interrumpir a las demás.
+- El Redactor relee `manual_estilo.md` en cada llamada, nunca lo cachea entre
+  ejecuciones.
 
 ## Punto de entrada
 
-`src/main.py` orquesta el flujo completo: Detector → Redactor → Verificador → publicación.
+```bash
+cd medio-noticias-ia
+uv sync
+cp .env.example .env   # completar ANTHROPIC_API_KEY
+uv run python -m src.main
+```
+
+`src/main.py` orquesta el flujo completo: Detector → Redactor → Verificador →
+`salida/*.md`. El estado de deduplicación vive en `estado/urls_vistas.json`.

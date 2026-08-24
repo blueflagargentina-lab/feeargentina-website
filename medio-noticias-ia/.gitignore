@@ -1,0 +1,11 @@
+# entorno virtual y cachés de Python
+.venv/
+__pycache__/
+*.pyc
+
+# secretos locales
+.env
+
+# estado y salida del pipeline: se regeneran en cada corrida
+estado/*.json
+salida/*.md
